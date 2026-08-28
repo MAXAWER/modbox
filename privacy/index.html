@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Политика конфиденциальности — ModBox</title>
+<meta name="robots" content="index, follow" />
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #5c6670; --rule: #e2e6ea;
+  --card: #f6f8fa; --accent: #1f6feb;
+  --note-bg: #fff6e0; --note-br: #e0a800;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a; --fg: #e6e9ec; --muted: #98a2ac; --rule: #2b3138;
+    --card: #1b1f24; --accent: #5c9dff;
+    --note-bg: #3a2f12; --note-br: #b98b00;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 16px/1.65 -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap { max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
+header.site { border-bottom: 1px solid var(--rule); margin-bottom: 2rem; padding-bottom: 1rem; }
+header.site a.brand { color: var(--fg); text-decoration: none; font-weight: 600; letter-spacing: .01em; }
+nav.langs { margin: 1rem 0 2rem; display: flex; gap: .5rem; flex-wrap: wrap; }
+nav.langs button {
+  font: inherit; font-size: .9rem; padding: .35rem .9rem; cursor: pointer;
+  background: var(--card); color: var(--fg); border: 1px solid var(--rule); border-radius: 999px;
+}
+nav.langs button[aria-pressed="true"] { background: var(--accent); color: #fff; border-color: var(--accent); }
+h1 { font-size: 1.9rem; line-height: 1.25; margin: 2rem 0 .5rem; }
+h2 { font-size: 1.3rem; line-height: 1.3; margin: 2.5rem 0 .75rem; padding-top: .5rem; border-top: 1px solid var(--rule); }
+h3 { font-size: 1.05rem; margin: 1.75rem 0 .5rem; }
+p, ul, ol { margin: 0 0 1rem; }
+ul, ol { padding-left: 1.4rem; }
+li { margin: .3rem 0; }
+a { color: var(--accent); }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
+code {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: .9em;
+  background: var(--card); padding: .12em .38em; border-radius: 4px;
+}
+blockquote {
+  margin: 1.25rem 0; padding: .85rem 1.1rem; background: var(--card);
+  border-left: 3px solid var(--rule); border-radius: 0 6px 6px 0; color: var(--muted);
+}
+.tablewrap { overflow-x: auto; margin: 0 0 1rem; }
+table { border-collapse: collapse; width: 100%; font-size: .94rem; }
+th, td { text-align: left; padding: .5rem .7rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-weight: 600; }
+em.sub { color: var(--muted); font-style: italic; }
+footer.site { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .88rem; }
+.cards { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); margin: 2rem 0; }
+.cards a {
+  display: block; padding: 1.1rem 1.2rem; background: var(--card);
+  border: 1px solid var(--rule); border-radius: 10px; text-decoration: none; color: var(--fg);
+}
+.cards a strong { display: block; margin-bottom: .3rem; color: var(--accent); }
+.cards a span { color: var(--muted); font-size: .9rem; }
+[data-lang] { display: block; }
+body[data-active="ru"] [data-lang="en"] { display: none; }
+body[data-active="en"] [data-lang="ru"] { display: none; }
+</style>
+</head>
+<body data-active="ru">
+<div class="wrap">
+<header class="site"><a class="brand" href="../">ModBox — MThread</a></header>
+<nav class="langs" aria-label="Language"><button type="button" data-lang="ru" aria-pressed="false">Русский</button><button type="button" data-lang="en" aria-pressed="false">English</button></nav>
+<main>
+<div data-lang="ru"><h1>Политика конфиденциальности ModBox</h1>
+<p><strong>Дата вступления в силу:</strong> 25 августа 2026 года. <strong>Действует для:</strong> приложения ModBox для Windows, сайта, на котором опубликован этот документ, и места встречи — единственной службы, которую MThread держит для совместной игры.</p>
+
+<h2>Кратко</h2>
+<ul>
+<li>Учётной записи в ModBox нет. Мы не спрашиваем ни имени, ни почты, ни пароля.</li>
+<li>Аккаунт Minecraft ModBox не запрашивает, не видит и не хранит. Игру запускает тот лаунчер, которым вы уже пользуетесь, и аккаунт остаётся там.</li>
+<li>Ваши профили, моды, сборки, миры и настройки лежат на вашем компьютере и никуда не отправляются.</li>
+<li>Приложение выходит в сеть только тогда, когда вы этого попросили: искали мод, ставили загрузчик, ставили Java, открыли совместную игру. Полный список адресатов — в разделе 3.</li>
+<li>Анонимная статистика выключена и включается только вручную. Пока она выключена, не отправляется ничего.</li>
+<li>Плату принимает Microsoft. Ни номера карты, ни платёжного адреса ModBox не видит.</li>
+</ul>
+
+<h2>1. Кто отвечает за данные</h2>
+<p>Оператором данных, описанных в этом документе, выступает <strong>MThread</strong>, издатель приложения ModBox в Microsoft Store. Связь по любому вопросу, связанному с этим документом, — <a href="mailto:0@MThread.kz">0@MThread.kz</a>.</p>
+
+<h2>2. Что происходит на вашем компьютере</h2>
+<p>Основная работа ModBox — читать и перекладывать файлы, которые уже лежат у вас. Приложение читает папки Minecraft, разбирает файлы модов, ведёт свой список профилей, делает снимки перед изменениями и складывает удалённое в карантин, откуда его можно вернуть. Всё это остаётся на диске под <code>%LOCALAPPDATA%\ModBox</code> и в самих папках игры. Ничего из этого не выгружается.</p>
+<p>Приложение никогда не удаляет ваш файл безвозвратно: то, что вы просите убрать, переименовывается или переносится в карантин, и оттуда возвращается одним нажатием.</p>
+
+<h2>3. Куда приложение выходит в сеть</h2>
+<p>Каждая строка ниже происходит только после вашего действия. Ни одна из них не выполняется в фоне без причины.</p>
+<div class="tablewrap"><table>
+<tr><th>Кому</th><th>Когда</th><th>Что уходит</th><th>Их политика</th></tr>
+<tr><td>Modrinth</td><td>Поиск модов, ресурс-паков и шейдеров; загрузка; проверка обновлений</td><td>Ваш поисковый запрос, контрольные суммы установленных файлов при проверке обновлений, IP-адрес</td><td><code>modrinth.com/legal/privacy</code></td></tr>
+<tr><td>FabricMC, QuiltMC, NeoForged, MinecraftForge</td><td>Установка загрузчика модов</td><td>Имя запрошенного файла и IP-адрес</td><td>Сайты этих проектов</td></tr>
+<tr><td>Eclipse Adoptium</td><td>Установка Java из приложения</td><td>Запрошенная версия и IP-адрес</td><td><code>adoptium.net/privacy-policy</code></td></tr>
+<tr><td>Mojang</td><td>Список версий, когда вы поднимаете свой сервер</td><td>IP-адрес</td><td><code>privacy.microsoft.com</code></td></tr>
+<tr><td>Google (Firebase)</td><td>Совместная игра: место встречи</td><td>Зашифрованное объявление, срок его истечения и IP-адрес. Содержимого Google прочесть не может</td><td><code>firebase.google.com/support/privacy</code></td></tr>
+<tr><td>Публичный STUN-сервер (Google или Cloudflare)</td><td>Попытка прямого соединения с другим игроком</td><td>Ваш публичный адрес и порт</td><td>Их собственные</td></tr>
+<tr><td>Компьютер другого игрока</td><td>Совместная игра</td><td>Ваш IP-адрес и игровой сеанс — ровно как при обычном подключении к серверу из игры</td><td>—</td></tr>
+<tr><td>Microsoft Store</td><td>Покупка подписки и проверка того, действует ли она</td><td>Всё делает Windows. ModBox получает один ответ: действует или нет</td><td><code>privacy.microsoft.com</code></td></tr>
+</table></div>
+<p><em>О месте встречи подробнее.</em> Это база Firebase Realtime Database в регионе <code>europe-west1</code> (Бельгия). Она держит короткие объявления, которые истекают сами через несколько минут. Объявление зашифровано ключом, выведенным из приглашения вашей группы; приглашение не покидает компьютеров участников, и ключа у Google нет. Google видит, что существует комната с выведенным именем, сколько в ней записей, насколько они длинные и когда истекают, и IP-адреса подключающихся. Google не видит названия группы, имён участников, названия мира, ваших адресов и состава сборки.</p>
+
+<h2>4. Статистика использования</h2>
+<p>В настройках есть выключатель анонимной статистики. По умолчанию он выключен, и пока он выключен, не отправляется ничего. Если вы его включите, это будет описано здесь до того, как что-либо начнёт отправляться.</p>
+
+<h2>5. Покупки</h2>
+<p>Подписку продаёт и обслуживает Microsoft через Microsoft Store. Платёжные данные вводятся в Windows и в ModBox не попадают: приложение спрашивает у Store один вопрос — действует ли надстройка на этом аккаунте — и получает ответ «да» или «нет». Возвраты, отмена подписки и история покупок находятся в вашем аккаунте Microsoft.</p>
+
+<h2>6. Файлы cookie</h2>
+<p>Приложение их не использует. Сайт, на котором опубликован этот документ, не использует ни cookie, ни счётчиков посещаемости.</p>
+
+<h2>7. Правовые основания (GDPR, UK GDPR)</h2>
+<p>Там, где применяются эти нормы, основанием обработки является <strong>исполнение договора</strong> (статья 6(1)(b)) — вы попросили найти мод, поставить загрузчик или открыть мир для друзей, и это невозможно сделать, не обратившись к соответствующей службе. Для анонимной статистики основанием является <strong>согласие</strong> (статья 6(1)(a)), которое вы даёте выключателем и отзываете им же.</p>
+<p>Место встречи размещено в Европейском союзе. Обращения к Modrinth, Adoptium, Mojang и издателям загрузчиков могут обслуживаться их сетями доставки за пределами ЕС; в этих обращениях нет ничего, кроме запроса файла и вашего IP-адреса.</p>
+
+<h2>8. Дети</h2>
+<p>ModBox не предназначен для детей младше 13 лет и не собирает данные намеренно ни от кого. Учётной записи нет, имени и почты приложение не спрашивает.</p>
+
+<h2>9. Хранение</h2>
+<p>Всё, что ModBox хранит, хранится на вашем компьютере, и вы удаляете это, удалив приложение и его папку данных. Объявления в месте встречи истекают через несколько минут и заменяются новыми, пока мир открыт. Ни у MThread, ни у кого-либо ещё нет базы пользователей ModBox: её не существует.</p>
+
+<h2>10. Ваши права</h2>
+<p>Права на доступ, исправление, удаление и переносимость данных мы можем исполнить только в отношении того, что у нас есть, — а у нас нет ничего, что было бы связано с вами: ни учётной записи, ни профиля, ни истории. Данные на вашем компьютере находятся полностью в вашем распоряжении. По любому вопросу пишите на <a href="mailto:0@MThread.kz">0@MThread.kz</a>.</p>
+
+<h2>11. Безопасность</h2>
+<p>Все сетевые обращения идут по HTTPS, к списку заранее названных адресов; проверка сертификата нигде не отключается. Загруженные файлы проверяются по контрольной сумме, которую публикует их же издатель, и никогда не загружаются внутрь процесса ModBox — установщики запускаются отдельными процессами.</p>
+
+<h2>12. Изменения</h2>
+<p>Если этот документ изменится, изменится и дата вверху. Существенные изменения будут описаны в примечаниях к выпуску приложения.</p>
+
+<h2>13. Связь</h2>
+<p><a href="mailto:0@MThread.kz">0@MThread.kz</a></p>
+<p><em>Не является официальным продуктом Minecraft. Не одобрено Mojang или Microsoft и не связано с ними.</em></p></div>
+<div data-lang="en"><h1>Privacy Policy — ModBox</h1>
+<p><strong>Effective date:</strong> 25 August 2026. <strong>Applies to:</strong> the ModBox application for Windows, the website this document is published on, and the meeting place — the one service MThread runs, for playing together.</p>
+
+<h2>In short</h2>
+<ul>
+<li>There is no ModBox account. We ask for no name, no e-mail and no password.</li>
+<li>ModBox never asks for, sees or stores a Minecraft account. The game is started by the launcher you already use, and the account stays there.</li>
+<li>Your profiles, mods, packs, worlds and settings stay on your computer and are sent nowhere.</li>
+<li>The application goes online only when you asked it to: searching for a mod, installing a loader, installing Java, opening a world to friends. Section 3 lists every destination.</li>
+<li>Anonymous usage statistics are off and are turned on only by hand. While they are off, nothing is sent.</li>
+<li>Payment is taken by Microsoft. ModBox never sees a card number or a billing address.</li>
+</ul>
+
+<h2>1. Who is responsible</h2>
+<p>The controller of the data described here is <strong>MThread</strong>, the publisher of ModBox on the Microsoft Store. For anything to do with this document, write to <a href="mailto:0@MThread.kz">0@MThread.kz</a>.</p>
+
+<h2>2. What happens on your computer</h2>
+<p>Most of what ModBox does is read and move files you already have. It reads Minecraft folders, parses mod files, keeps its own list of profiles, takes a snapshot before it changes anything, and puts removed files in quarantine where you can get them back. All of it stays on disk under <code>%LOCALAPPDATA%\ModBox</code> and in the game folders themselves. None of it is uploaded.</p>
+<p>The application never deletes one of your files for good: what you ask it to remove is renamed or moved to quarantine, and comes back with one press.</p>
+
+<h2>3. Where the application goes online</h2>
+<p>Every row below follows an action of yours. None of it happens in the background without a reason.</p>
+<div class="tablewrap"><table>
+<tr><th>Who</th><th>When</th><th>What leaves</th><th>Their policy</th></tr>
+<tr><td>Modrinth</td><td>Searching for mods, resource packs and shaders; downloading; checking for updates</td><td>Your search text, the checksums of installed files when checking for updates, your IP address</td><td><code>modrinth.com/legal/privacy</code></td></tr>
+<tr><td>FabricMC, QuiltMC, NeoForged, MinecraftForge</td><td>Installing a mod loader</td><td>The name of the file requested and your IP address</td><td>Those projects' own sites</td></tr>
+<tr><td>Eclipse Adoptium</td><td>Installing Java from the application</td><td>The version requested and your IP address</td><td><code>adoptium.net/privacy-policy</code></td></tr>
+<tr><td>Mojang</td><td>The list of versions, when you set up your own server</td><td>Your IP address</td><td><code>privacy.microsoft.com</code></td></tr>
+<tr><td>Google (Firebase)</td><td>Playing together: the meeting place</td><td>An encrypted notice, its expiry and your IP address. Google cannot read the contents</td><td><code>firebase.google.com/support/privacy</code></td></tr>
+<tr><td>A public STUN server (Google or Cloudflare)</td><td>Trying to reach another player directly</td><td>Your public address and port</td><td>Their own</td></tr>
+<tr><td>The other player's computer</td><td>Playing together</td><td>Your IP address and the game session — exactly as when you join a server from the game itself</td><td>—</td></tr>
+<tr><td>Microsoft Store</td><td>Buying the subscription and checking whether it is active</td><td>Windows does all of it. ModBox gets one answer: active or not</td><td><code>privacy.microsoft.com</code></td></tr>
+</table></div>
+<p><em>More about the meeting place.</em> It is a Firebase Realtime Database in the <code>europe-west1</code> region (Belgium). It holds short notices that expire by themselves after a few minutes. A notice is encrypted with a key derived from your group's invitation; the invitation never leaves the members' computers, and Google has no key. Google can see that a room with a derived name exists, how many entries it holds, how long they are, when they expire, and the IP addresses that connect. Google cannot see your group's name, the members' names, the world's name, your addresses or your mod set.</p>
+
+<h2>4. Usage statistics</h2>
+<p>Settings carries a switch for anonymous usage statistics. It is off by default, and while it is off nothing is sent. If you turn it on, what is sent will be described here before anything is.</p>
+
+<h2>5. Purchases</h2>
+<p>The subscription is sold and serviced by Microsoft through the Microsoft Store. Payment details are entered in Windows and never reach ModBox: the application asks the Store one question — is the add-on active on this account — and gets yes or no. Refunds, cancellation and purchase history live in your Microsoft account.</p>
+
+<h2>6. Cookies</h2>
+<p>The application uses none. The website this document is published on uses no cookies and no analytics.</p>
+
+<h2>7. Legal basis (GDPR, UK GDPR)</h2>
+<p>Where those rules apply, the basis is <strong>performance of a contract</strong> (Article 6(1)(b)): you asked for a mod to be found, a loader installed or a world opened to friends, and none of that can be done without contacting the service concerned. For anonymous statistics the basis is <strong>consent</strong> (Article 6(1)(a)), given by the switch and withdrawn by the same switch.</p>
+<p>The meeting place is hosted in the European Union. Requests to Modrinth, Adoptium, Mojang and the loader publishers may be served by their content networks outside the EU; those requests contain nothing but a file request and your IP address.</p>
+
+<h2>8. Children</h2>
+<p>ModBox is not directed at children under 13 and does not knowingly collect data from anybody. There is no account, and the application asks for no name and no e-mail.</p>
+
+<h2>9. Retention</h2>
+<p>Everything ModBox keeps is kept on your computer, and you delete it by removing the application and its data folder. Notices in the meeting place expire after a few minutes and are replaced while a world is open. Neither MThread nor anybody else holds a database of ModBox users: there is none.</p>
+
+<h2>10. Your rights</h2>
+<p>Rights of access, correction, erasure and portability can only be exercised over what we hold — and we hold nothing connected to you: no account, no profile, no history. The data on your computer is entirely yours. For anything at all, write to <a href="mailto:0@MThread.kz">0@MThread.kz</a>.</p>
+
+<h2>11. Security</h2>
+<p>Every request goes over HTTPS to a list of addresses named in advance, and certificate validation is disabled nowhere. Downloaded files are checked against a checksum published by the same people who published the file, and are never loaded into the ModBox process: installers are run as separate processes.</p>
+
+<h2>12. Changes</h2>
+<p>If this document changes, the date at the top changes with it. Anything material will be described in the application's release notes.</p>
+
+<h2>13. Contact</h2>
+<p><a href="mailto:0@MThread.kz">0@MThread.kz</a></p>
+<p><em>NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</em></p></div>
+</main>
+<footer class="site">
+<p>MThread · <a href="mailto:0@MThread.kz">0@MThread.kz</a></p>
+<p><em class="sub">NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</em></p>
+</footer>
+</div>
+<script>
+(function () {
+  var body = document.body;
+  var buttons = document.querySelectorAll('nav.langs button');
+  if (!buttons.length) { return; }
+  function set(lang) {
+    body.setAttribute('data-active', lang);
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].setAttribute('aria-pressed', String(buttons[i].dataset.lang === lang));
+    }
+    try { localStorage.setItem('modbox-lang', lang); } catch (e) { /* private mode */ }
+  }
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function () { set(this.dataset.lang); });
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('modbox-lang'); } catch (e) { /* ignore */ }
+  set(saved === 'en' || saved === 'ru' ? saved
+      : ((navigator.language || 'en').toLowerCase().indexOf('ru') === 0 ? 'ru' : 'en'));
+})();
+</script>
+</body>
+</html>
