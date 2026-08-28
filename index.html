@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ModBox — MThread</title>
+<meta name="robots" content="index, follow" />
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff; --fg: #1a1a1a; --muted: #5c6670; --rule: #e2e6ea;
+  --card: #f6f8fa; --accent: #1f6feb; --todo-bg: #ffe8e8; --todo-fg: #a40000;
+  --note-bg: #fff6e0; --note-br: #e0a800;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a; --fg: #e6e9ec; --muted: #98a2ac; --rule: #2b3138;
+    --card: #1b1f24; --accent: #5c9dff; --todo-bg: #4a1717; --todo-fg: #ff9a9a;
+    --note-bg: #3a2f12; --note-br: #b98b00;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 16px/1.65 -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap { max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
+header.site { border-bottom: 1px solid var(--rule); margin-bottom: 2rem; padding-bottom: 1rem; }
+header.site a.brand { color: var(--fg); text-decoration: none; font-weight: 600; letter-spacing: .01em; }
+nav.langs { margin: 1rem 0 2rem; display: flex; gap: .5rem; flex-wrap: wrap; }
+nav.langs button {
+  font: inherit; font-size: .9rem; padding: .35rem .9rem; cursor: pointer;
+  background: var(--card); color: var(--fg); border: 1px solid var(--rule); border-radius: 999px;
+}
+nav.langs button[aria-pressed="true"] { background: var(--accent); color: #fff; border-color: var(--accent); }
+h1 { font-size: 1.9rem; line-height: 1.25; margin: 2rem 0 .5rem; }
+h2 { font-size: 1.3rem; line-height: 1.3; margin: 2.5rem 0 .75rem; padding-top: .5rem; border-top: 1px solid var(--rule); }
+h3 { font-size: 1.05rem; margin: 1.75rem 0 .5rem; }
+p, ul, ol { margin: 0 0 1rem; }
+ul, ol { padding-left: 1.4rem; }
+li { margin: .3rem 0; }
+a { color: var(--accent); }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
+code {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: .9em;
+  background: var(--card); padding: .12em .38em; border-radius: 4px;
+}
+blockquote {
+  margin: 1.25rem 0; padding: .85rem 1.1rem; background: var(--card);
+  border-left: 3px solid var(--rule); border-radius: 0 6px 6px 0; color: var(--muted);
+}
+blockquote.draft { background: var(--note-bg); border-left-color: var(--note-br); color: var(--fg); }
+blockquote.draft::before {
+  content: attr(data-label); display: block; font-weight: 700; text-transform: uppercase;
+  font-size: .72rem; letter-spacing: .08em; margin-bottom: .4rem; color: var(--note-br);
+}
+mark.todo { background: var(--todo-bg); color: var(--todo-fg); font-weight: 600; padding: .05em .3em; border-radius: 3px; }
+.tablewrap { overflow-x: auto; margin: 0 0 1rem; }
+table { border-collapse: collapse; width: 100%; font-size: .94rem; }
+th, td { text-align: left; padding: .5rem .7rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-weight: 600; }
+em.sub { color: var(--muted); font-style: italic; }
+footer.site { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .88rem; }
+.cards { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); margin: 2rem 0; }
+.cards a {
+  display: block; padding: 1.1rem 1.2rem; background: var(--card);
+  border: 1px solid var(--rule); border-radius: 10px; text-decoration: none; color: var(--fg);
+}
+.cards a strong { display: block; margin-bottom: .3rem; color: var(--accent); }
+.cards a span { color: var(--muted); font-size: .9rem; }
+[data-lang] { display: block; }
+body[data-active="ru"] [data-lang="en"] { display: none; }
+body[data-active="en"] [data-lang="ru"] { display: none; }
+</style>
+</head>
+<body data-active="ru">
+<div class="wrap">
+<header class="site"><a class="brand" href="./">ModBox — MThread</a></header>
+<nav class="langs" aria-label="Language"><button type="button" data-lang="ru" aria-pressed="false">Русский</button><button type="button" data-lang="en" aria-pressed="false">English</button></nav>
+<main>
+<div data-lang="ru"><h1>ModBox</h1>
+<p>ModBox — менеджер модов для <strong>Minecraft: Java Edition</strong> под Windows. Он не запускает игру, не спрашивает учётную запись Mojang или Microsoft и не хранит паролей. Он читает папку с модами, объясняет, что в ней не так, и умеет это чинить.</p>
+<p>Издатель — <strong>MThread</strong>.</p>
+<h2>Документы</h2>
+<ul><li><a href="privacy/">Политика конфиденциальности</a></li><li><a href="terms/">Условия использования</a></li><li><a href="support/">Поддержка</a></li></ul>
+<h2>Связь</h2>
+<p>Написать можно на <code>0@MThread.kz</code>.</p></div><div data-lang="en"><h1>ModBox</h1>
+<p>ModBox is a mod manager for <strong>Minecraft: Java Edition</strong> on Windows. It does not launch the game, does not ask for a Mojang or Microsoft account, and stores no passwords. It reads the mods folder, explains what is wrong with it, and can put it right.</p>
+<p>Published by <strong>MThread</strong>.</p>
+<h2>Documents</h2>
+<ul><li><a href="privacy/">Privacy policy</a></li><li><a href="terms/">Terms of use</a></li><li><a href="support/">Support</a></li></ul>
+<h2>Contact</h2>
+<p>Write to <code>0@MThread.kz</code>.</p></div>
+</main>
+<footer class="site">
+<p>MThread · <a href="mailto:0@MThread.kz">0@MThread.kz</a></p>
+<p><em class="sub">NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</em></p>
+</footer>
+</div>
+<script>
+(function () {
+  var body = document.body;
+  var buttons = document.querySelectorAll('nav.langs button');
+  if (!buttons.length) { return; }
+  function set(lang) {
+    body.setAttribute('data-active', lang);
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].setAttribute('aria-pressed', String(buttons[i].dataset.lang === lang));
+    }
+    try { localStorage.setItem('modbox-lang', lang); } catch (e) { /* private mode */ }
+  }
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function () { set(this.dataset.lang); });
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('modbox-lang'); } catch (e) { /* ignore */ }
+  set(saved === 'en' || saved === 'ru' ? saved
+      : ((navigator.language || 'en').toLowerCase().indexOf('ru') === 0 ? 'ru' : 'en'));
+})();
+</script>
+</body>
+</html>
