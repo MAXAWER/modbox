@@ -1,0 +1,757 @@
+/* ===========================================================================
+   ModBox — one stylesheet for every page on the site.
+
+   Dark first, because the product is: the palette below is the instrument
+   panel ModBox itself is, and the light theme is the swap rather than the
+   origin. Every colour is a token on :root; nothing takes a colour from
+   inside a media query alone, which is the fault that leaves one theme's
+   text standing on the other theme's ground.
+   =========================================================================== */
+
+:root {
+  color-scheme: dark light;
+
+  /* Ground and surfaces. Blue-biased near-black, never pure. */
+  --ground:      #0f1419;
+  --raised:      #161c23;
+  --sunken:      #0b0f13;
+  --rule:        #232b34;
+  --rule-strong: #33404c;
+
+  /* Text. Cool light grey rather than white — white on this ground glares. */
+  --ink:         #d6dde5;
+  --ink-strong:  #f2f5f8;
+  --ink-muted:   #7e8b99;
+  --ink-faint:   #5a6673;
+
+  /* Brass. The warning lamp on an instrument, used sparingly. */
+  --brass:       #c8964a;
+  --brass-lit:   #e0ac5c;
+  --brass-dim:   rgba(200, 150, 74, 0.14);
+
+  /* Verdicts. Separate from the accent, except for the warning — in this
+     product a warning IS the accent, and saying so twice would be a lie. */
+  --ok:          #6e9e5f;
+  --ok-dim:      rgba(110, 158, 95, 0.14);
+  --warn:        var(--brass);
+  --warn-dim:    var(--brass-dim);
+  --stop:        #b4514e;
+  --stop-dim:    rgba(180, 81, 78, 0.15);
+
+  --focus:       #7fb2e8;
+
+  /* Type */
+  --display: "Archivo", "Segoe UI", system-ui, sans-serif;
+  --body:    "Literata", Georgia, "Times New Roman", serif;
+  --mono:    "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  --measure: 65ch;
+  --rail:    16.5rem;
+
+  --step-0: 1rem;
+  --step-1: 1.15rem;
+  --step-2: 1.4rem;
+  --step-3: 1.85rem;
+  --step-4: 2.6rem;
+  --step-5: clamp(2.6rem, 1.6rem + 3.4vw, 4.2rem);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --ground:      #f4f6f8;
+    --raised:      #ffffff;
+    --sunken:      #eaeef2;
+    --rule:        #dfe5eb;
+    --rule-strong: #c3ced8;
+
+    --ink:         #1b232b;
+    --ink-strong:  #0d1319;
+    --ink-muted:   #5b6874;
+    --ink-faint:   #7d8994;
+
+    --brass:       #8a5f1e;
+    --brass-lit:   #6f4b13;
+    --brass-dim:   rgba(138, 95, 30, 0.10);
+
+    --ok:          #3f6f33;
+    --ok-dim:      rgba(63, 111, 51, 0.10);
+    --stop:        #a03b38;
+    --stop-dim:    rgba(160, 59, 56, 0.10);
+
+    --focus:       #1f6feb;
+  }
+}
+
+:root[data-theme="light"] {
+  --ground:      #f4f6f8;
+  --raised:      #ffffff;
+  --sunken:      #eaeef2;
+  --rule:        #dfe5eb;
+  --rule-strong: #c3ced8;
+
+  --ink:         #1b232b;
+  --ink-strong:  #0d1319;
+  --ink-muted:   #5b6874;
+  --ink-faint:   #7d8994;
+
+  --brass:       #8a5f1e;
+  --brass-lit:   #6f4b13;
+  --brass-dim:   rgba(138, 95, 30, 0.10);
+
+  --ok:          #3f6f33;
+  --ok-dim:      rgba(63, 111, 51, 0.10);
+  --stop:        #a03b38;
+  --stop-dim:    rgba(160, 59, 56, 0.10);
+
+  --focus:       #1f6feb;
+}
+
+/* --------------------------------------------------------------- reset */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: var(--step-0);
+  line-height: 1.7;
+  font-optical-sizing: auto;
+}
+
+:where(a):focus-visible,
+:where(button):focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ------------------------------------------------------------ the shell */
+
+.shell {
+  display: grid;
+  grid-template-columns: var(--rail) minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+/* The navigation rail, which is the application's own left rail. A site of
+   legal documents that looks like the product is unusual on purpose: the
+   reviewer and the player both meet the thing before they install it. */
+.rail {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.6rem 1.1rem 1.4rem;
+  background: var(--sunken);
+  border-right: 1px solid var(--rule);
+  overflow-y: auto;
+}
+
+.mark {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  text-decoration: none;
+  color: var(--ink-strong);
+}
+
+.mark-glyph {
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 7px;
+  background: linear-gradient(150deg, var(--brass-lit), var(--brass));
+  display: grid;
+  place-items: center;
+  color: #14100a;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: .95rem;
+  letter-spacing: -.02em;
+}
+
+.mark-name {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -.01em;
+  line-height: 1.1;
+}
+
+.mark-by {
+  display: block;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: .72rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.rail nav { display: flex; flex-direction: column; gap: .15rem; }
+
+.rail-head {
+  font-family: var(--display);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding: .9rem .7rem .35rem;
+}
+
+.rail a.item {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .5rem .7rem;
+  border-radius: 7px;
+  text-decoration: none;
+  color: var(--ink-muted);
+  font-family: var(--display);
+  font-size: .93rem;
+  font-weight: 500;
+  border-left: 2px solid transparent;
+  transition: background .14s ease, color .14s ease;
+}
+
+.rail a.item:hover { background: var(--raised); color: var(--ink); }
+
+.rail a.item[aria-current="page"] {
+  background: var(--raised);
+  color: var(--ink-strong);
+  border-left-color: var(--brass);
+}
+
+.rail a.item svg { flex: none; width: 1.05rem; height: 1.05rem; opacity: .85; }
+
+.rail-foot { margin-top: auto; display: flex; flex-direction: column; gap: .8rem; }
+
+/* Language and theme switches share one control shape. */
+.switch {
+  display: flex;
+  padding: 2px;
+  gap: 2px;
+  background: var(--ground);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+
+.switch button {
+  flex: 1;
+  font: 500 .8rem/1 var(--display);
+  padding: .42rem .3rem;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  border-radius: 6px;
+  color: var(--ink-muted);
+}
+
+.switch button:hover { color: var(--ink); }
+
+.switch button[aria-pressed="true"] {
+  background: var(--raised);
+  color: var(--ink-strong);
+  box-shadow: 0 1px 2px rgb(0 0 0 / .25);
+}
+
+/* ------------------------------------------------------------- content */
+
+.pane { min-width: 0; }
+
+.page {
+  /* Wider than the measure on purpose: the prose stays at 65ch and the
+     .full blocks step outside it, which is the only width signal the page
+     uses to say "this is the exhibit, that is the commentary". */
+  max-width: calc(var(--measure) + 14rem);
+  margin: 0 auto;
+  padding: 4.5rem 3rem 6rem;
+}
+
+/* The measure applies to the prose, not to the wrapper each language sits in -
+   which is what .page > * would have constrained, leaving the check card boxed
+   to the width of a paragraph. */
+.page > *:not([data-lang]),
+.page > [data-lang] > * { max-width: var(--measure); }
+.page .full { max-width: none; }
+
+.eyebrow {
+  font-family: var(--display);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin: 0 0 .9rem;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--display);
+  color: var(--ink-strong);
+  text-wrap: balance;
+  letter-spacing: -.018em;
+  margin: 0;
+}
+
+h1 { font-size: var(--step-4); font-weight: 700; line-height: 1.08; }
+h2 { font-size: var(--step-3); font-weight: 600; line-height: 1.2; margin: 3.4rem 0 1rem; }
+h3 { font-size: var(--step-1); font-weight: 600; line-height: 1.35; margin: 2.2rem 0 .6rem; }
+h4 { font-size: var(--step-0); font-weight: 600; margin: 1.6rem 0 .4rem; }
+
+h2 + h3 { margin-top: 1.4rem; }
+
+.lede {
+  font-size: var(--step-1);
+  line-height: 1.62;
+  color: var(--ink);
+  margin: 1.1rem 0 0;
+}
+
+p, ul, ol, dl { margin: 0 0 1.15rem; }
+ul, ol { padding-left: 1.35rem; }
+li { margin: .35rem 0; }
+li::marker { color: var(--ink-faint); }
+
+a { color: var(--brass); text-underline-offset: .18em; text-decoration-thickness: 1px; }
+a:hover { color: var(--brass-lit); }
+
+strong { color: var(--ink-strong); font-weight: 600; }
+
+code, kbd, samp {
+  font-family: var(--mono);
+  font-size: .875em;
+  background: var(--raised);
+  border: 1px solid var(--rule);
+  padding: .1em .4em;
+  border-radius: 5px;
+}
+
+pre {
+  font-family: var(--mono);
+  font-size: .84rem;
+  line-height: 1.6;
+  background: var(--sunken);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 1rem 1.15rem;
+  overflow-x: auto;
+  margin: 0 0 1.3rem;
+}
+
+pre code { background: none; border: 0; padding: 0; font-size: inherit; }
+
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.6rem 0; }
+
+blockquote {
+  margin: 1.4rem 0;
+  padding: .9rem 1.15rem;
+  background: var(--raised);
+  border-left: 2px solid var(--rule-strong);
+  border-radius: 0 8px 8px 0;
+  color: var(--ink-muted);
+}
+
+.tablewrap { overflow-x: auto; margin: 0 0 1.3rem; }
+
+table { border-collapse: collapse; width: 100%; font-size: .93rem; }
+caption { text-align: left; color: var(--ink-muted); font-size: .85rem; padding-bottom: .5rem; }
+th, td { text-align: left; padding: .58rem .8rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: .82rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+td.num { font-variant-numeric: tabular-nums; }
+
+/* --------------------------------------------------- the pre-flight hero */
+
+/* The most characteristic thing this product does, shown rather than
+   described: the check that runs before the game does. */
+.check,
+.crew {
+  font-family: var(--mono);
+  font-size: .84rem;
+  line-height: 1.5;
+  background: var(--sunken);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 2.6rem 0 0;
+  box-shadow: 0 18px 40px -28px rgb(0 0 0 / .8);
+}
+
+.check-bar {
+  display: flex;
+  align-items: baseline;
+  gap: .8rem;
+  flex-wrap: wrap;
+  padding: .8rem 1.1rem;
+  border-bottom: 1px solid var(--rule);
+  background: var(--raised);
+}
+
+.check-bar b {
+  font-family: var(--display);
+  font-size: .74rem;
+  font-weight: 600;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.check-bar span { margin-left: auto; color: var(--ink-faint); font-size: .78rem; }
+
+.check-rows { list-style: none; margin: 0; padding: .5rem 0; }
+
+.check-rows li {
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 1fr);
+  gap: .2rem .5rem;
+  align-items: baseline;
+  margin: 0;
+  padding: .3rem 1.1rem;
+  opacity: 0;
+  transform: translateY(3px);
+  animation: settle .34s ease forwards;
+  animation-delay: calc(var(--i) * 170ms);
+}
+
+.check-rows .sign { justify-self: center; font-weight: 700; }
+.check-rows .file { color: var(--ink); overflow-wrap: anywhere; }
+.check-rows .why { grid-column: 2; color: var(--ink-muted); font-size: .95em; }
+
+.check-rows .ok   .sign { color: var(--ok); }
+.check-rows .warn .sign { color: var(--warn); }
+.check-rows .stop .sign { color: var(--stop); }
+
+.check-foot {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  padding: .85rem 1.1rem;
+  border-top: 1px solid var(--rule);
+  background: var(--raised);
+  opacity: 0;
+  animation: settle .4s ease forwards;
+  animation-delay: 1.35s;
+}
+
+.tag {
+  font-family: var(--display);
+  font-size: .74rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  padding: .22rem .6rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.tag.stop { color: var(--stop); background: var(--stop-dim); border-color: var(--stop); }
+.tag.warn { color: var(--warn); background: var(--warn-dim); border-color: var(--warn); }
+.tag.ok   { color: var(--ok);   background: var(--ok-dim);   border-color: var(--ok); }
+
+@keyframes settle {
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .check-rows li, .check-foot {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  * { scroll-behavior: auto !important; }
+}
+
+/* The summary at the head of a legal document, built as the same object as
+   the pre-flight check: a bordered panel of rows, each one a finding with a
+   mark against it. Same idea, so the same shape - what differs is that these
+   are sentences rather than filenames, so they keep the body face and no
+   animation, because a document is read, not watched. */
+.claims {
+  list-style: none;
+  margin: 1.6rem 0 2.2rem;
+  padding: .35rem 0;
+  background: var(--sunken);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+}
+
+.claims li {
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: .5rem;
+  margin: 0;
+  padding: .55rem 1.1rem;
+  font-size: .96rem;
+}
+
+.claims li + li { border-top: 1px solid var(--rule); }
+
+.claims li::before {
+  content: "✓";
+  justify-self: center;
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--ok);
+}
+
+.claims li::marker { content: none; }
+
+/* The second exhibit: a group holding one mod set. Where the check answers
+   "what is wrong with my folder", this answers "who has what, and where the
+   missing file is coming from" - so the row carries a name, a ping and a
+   verdict rather than a filename. */
+.crew-rows { list-style: none; margin: 0; padding: .5rem 0; }
+
+.crew-rows li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .15rem .9rem;
+  align-items: baseline;
+  margin: 0;
+  padding: .45rem 1.1rem;
+}
+
+.crew-rows li + li { border-top: 1px solid var(--rule); }
+.crew-rows .who { color: var(--ink); overflow-wrap: anywhere; }
+.crew-rows .role { color: var(--ink-faint); }
+
+/* Pings line up as a column of numbers, so they are read as a column. */
+.crew-rows .ping {
+  color: var(--ink-faint);
+  justify-self: end;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.crew-rows .state { grid-column: 1 / -1; color: var(--ink-muted); font-size: .95em; }
+.crew-rows .state.ok   { color: var(--ok); }
+.crew-rows .state.warn { color: var(--warn); }
+
+.crew-foot {
+  padding: .85rem 1.1rem;
+  border-top: 1px solid var(--rule);
+  background: var(--raised);
+  color: var(--ink-muted);
+  font-size: .95em;
+}
+
+.crew-foot b { color: var(--brass); font-weight: 500; }
+
+/* ------------------------------------------------------------ card grid */
+
+.cards {
+  display: grid;
+  gap: .9rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  margin: 2rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.cards li { margin: 0; }
+
+.cards a {
+  display: block;
+  height: 100%;
+  padding: 1.15rem 1.25rem;
+  background: var(--raised);
+  border: 1px solid var(--rule);
+  border-radius: 11px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color .15s ease, transform .15s ease;
+}
+
+.cards a:hover { border-color: var(--rule-strong); transform: translateY(-2px); }
+
+.cards strong {
+  display: block;
+  font-family: var(--display);
+  font-size: .98rem;
+  margin-bottom: .3rem;
+  color: var(--ink-strong);
+}
+
+.cards span { display: block; font-size: .89rem; color: var(--ink-muted); line-height: 1.5; }
+
+/* ------------------------------------------------------------- specifics */
+
+.facts {
+  display: grid;
+  gap: 0;
+  margin: 2rem 0;
+  border: 1px solid var(--rule);
+  border-radius: 11px;
+  overflow: hidden;
+  background: var(--raised);
+}
+
+.facts div {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: .8rem 1.15rem;
+  border-bottom: 1px solid var(--rule);
+  font-size: .93rem;
+}
+
+.facts div:last-child { border-bottom: 0; }
+
+.facts dt {
+  font-family: var(--display);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin: 0;
+  padding-top: .15rem;
+}
+
+.facts dd { margin: 0; }
+
+.note {
+  margin: 1.6rem 0;
+  padding: .95rem 1.15rem;
+  background: var(--brass-dim);
+  border: 1px solid var(--brass);
+  border-radius: 10px;
+  font-size: .93rem;
+  color: var(--ink);
+}
+
+.note b {
+  display: block;
+  font-family: var(--display);
+  font-size: .74rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: .35rem;
+}
+
+.updated {
+  font-family: var(--display);
+  font-size: .8rem;
+  color: var(--ink-faint);
+  margin: .6rem 0 0;
+}
+
+.foot {
+  margin-top: 5rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-muted);
+  font-size: .87rem;
+}
+
+.foot p { margin: 0 0 .5rem; }
+
+.disclaimer {
+  font-family: var(--display);
+  font-size: .72rem;
+  letter-spacing: .05em;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  line-height: 1.6;
+}
+
+/* Two languages live in one document; the switch hides one of them. The switch's
+   own buttons deliberately use a different attribute (data-set-lang), because a
+   button labelled with the language it selects must stay visible in both. */
+[data-lang] { display: none; }
+body[data-active="ru"] [data-lang="ru"] { display: block; }
+body[data-active="en"] [data-lang="en"] { display: block; }
+span[data-lang], a[data-lang], b[data-lang] { display: none; }
+body[data-active="ru"] span[data-lang="ru"],
+body[data-active="ru"] a[data-lang="ru"],
+body[data-active="ru"] b[data-lang="ru"] { display: inline; }
+body[data-active="en"] span[data-lang="en"],
+body[data-active="en"] a[data-lang="en"],
+body[data-active="en"] b[data-lang="en"] { display: inline; }
+
+/* -------------------------------------------------------------- narrow */
+
+.rail-toggle { display: none; }
+
+@media (max-width: 62rem) {
+  /* minmax(0, 1fr), not 1fr: a bare 1fr floors the track at the min-content
+     width of what is in it, and the nav is a row of four names that does not
+     wrap. That floor pushed the whole grid - rail and pane together - out to
+     714px inside a 375px window, so every line of the page ran off the right
+     edge. The pair of min-width: 0 below stop the same thing happening one
+     level down, at the flex items. */
+  .shell { grid-template-columns: minmax(0, 1fr); }
+
+  .rail {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: auto;
+    min-width: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .5rem 1rem;
+    padding: .7rem 1rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--rule);
+    overflow: visible;
+  }
+
+  .rail-head { display: none; }
+
+  /* The name and the switches share the first line; the tabs take the second
+     one whole and scroll sideways within it. Three things on one line is what
+     overflowed a phone. */
+  .mark { order: 1; }
+  .rail-foot { order: 2; margin: 0 0 0 auto; flex-direction: row; flex-wrap: wrap; }
+
+  .rail nav {
+    order: 3;
+    flex: 1 0 100%;
+    min-width: 0;
+    flex-direction: row;
+    gap: .2rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .rail nav::-webkit-scrollbar { display: none; }
+
+  .rail a.item {
+    border-left: 0;
+    border-bottom: 2px solid transparent;
+    border-radius: 6px 6px 0 0;
+    white-space: nowrap;
+    padding: .45rem .6rem;
+  }
+
+  .rail a.item[aria-current="page"] { border-bottom-color: var(--brass); }
+  .rail a.item svg { display: none; }
+
+  .pane, .page { min-width: 0; }
+  .page { padding: 2.5rem 1.25rem 4rem; }
+}
+
+@media (max-width: 34rem) {
+  .mark-name { font-size: .95rem; }
+  .mark-by { display: none; }
+  .facts div { grid-template-columns: 1fr; gap: .2rem; }
+  .check-rows li { grid-template-columns: 1.6rem minmax(0, 1fr); }
+}
