@@ -3,123 +3,137 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Поддержка — ModBox</title>
+<title data-ru="Поддержка — ModBox" data-en="Support — ModBox">Поддержка — ModBox</title>
 <meta name="robots" content="index, follow" />
-<style>
-:root {
-  color-scheme: light dark;
-  --bg: #ffffff; --fg: #1a1a1a; --muted: #5c6670; --rule: #e2e6ea;
-  --card: #f6f8fa; --accent: #1f6feb; --todo-bg: #ffe8e8; --todo-fg: #a40000;
-  --note-bg: #fff6e0; --note-br: #e0a800;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #14171a; --fg: #e6e9ec; --muted: #98a2ac; --rule: #2b3138;
-    --card: #1b1f24; --accent: #5c9dff; --todo-bg: #4a1717; --todo-fg: #ff9a9a;
-    --note-bg: #3a2f12; --note-br: #b98b00;
-  }
-}
-* { box-sizing: border-box; }
-body {
-  margin: 0; background: var(--bg); color: var(--fg);
-  font: 16px/1.65 -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  -webkit-text-size-adjust: 100%;
-}
-.wrap { max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
-header.site { border-bottom: 1px solid var(--rule); margin-bottom: 2rem; padding-bottom: 1rem; }
-header.site a.brand { color: var(--fg); text-decoration: none; font-weight: 600; letter-spacing: .01em; }
-nav.langs { margin: 1rem 0 2rem; display: flex; gap: .5rem; flex-wrap: wrap; }
-nav.langs button {
-  font: inherit; font-size: .9rem; padding: .35rem .9rem; cursor: pointer;
-  background: var(--card); color: var(--fg); border: 1px solid var(--rule); border-radius: 999px;
-}
-nav.langs button[aria-pressed="true"] { background: var(--accent); color: #fff; border-color: var(--accent); }
-h1 { font-size: 1.9rem; line-height: 1.25; margin: 2rem 0 .5rem; }
-h2 { font-size: 1.3rem; line-height: 1.3; margin: 2.5rem 0 .75rem; padding-top: .5rem; border-top: 1px solid var(--rule); }
-h3 { font-size: 1.05rem; margin: 1.75rem 0 .5rem; }
-p, ul, ol { margin: 0 0 1rem; }
-ul, ol { padding-left: 1.4rem; }
-li { margin: .3rem 0; }
-a { color: var(--accent); }
-hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
-code {
-  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: .9em;
-  background: var(--card); padding: .12em .38em; border-radius: 4px;
-}
-blockquote {
-  margin: 1.25rem 0; padding: .85rem 1.1rem; background: var(--card);
-  border-left: 3px solid var(--rule); border-radius: 0 6px 6px 0; color: var(--muted);
-}
-blockquote.draft { background: var(--note-bg); border-left-color: var(--note-br); color: var(--fg); }
-blockquote.draft::before {
-  content: attr(data-label); display: block; font-weight: 700; text-transform: uppercase;
-  font-size: .72rem; letter-spacing: .08em; margin-bottom: .4rem; color: var(--note-br);
-}
-mark.todo { background: var(--todo-bg); color: var(--todo-fg); font-weight: 600; padding: .05em .3em; border-radius: 3px; }
-.tablewrap { overflow-x: auto; margin: 0 0 1rem; }
-table { border-collapse: collapse; width: 100%; font-size: .94rem; }
-th, td { text-align: left; padding: .5rem .7rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
-th { font-weight: 600; }
-em.sub { color: var(--muted); font-style: italic; }
-footer.site { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .88rem; }
-.cards { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); margin: 2rem 0; }
-.cards a {
-  display: block; padding: 1.1rem 1.2rem; background: var(--card);
-  border: 1px solid var(--rule); border-radius: 10px; text-decoration: none; color: var(--fg);
-}
-.cards a strong { display: block; margin-bottom: .3rem; color: var(--accent); }
-.cards a span { color: var(--muted); font-size: .9rem; }
-[data-lang] { display: block; }
-body[data-active="ru"] [data-lang="en"] { display: none; }
-body[data-active="en"] [data-lang="ru"] { display: none; }
-</style>
+<meta name="description" content="Куда писать и что приложить. / Where to write, and what to attach." />
+<meta name="theme-color" content="#0f1419" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" />
+<link rel="stylesheet" href="../assets/site.css" />
 </head>
 <body data-active="ru">
-<div class="wrap">
-<header class="site"><a class="brand" href="../">ModBox — MThread</a></header>
-<nav class="langs" aria-label="Language"><button type="button" data-lang="ru" aria-pressed="false">Русский</button><button type="button" data-lang="en" aria-pressed="false">English</button></nav>
-<main>
-<div data-lang="ru"><h1>Поддержка ModBox</h1>
-<p>Пишите на <code>0@MThread.kz</code>. Это единственный адрес поддержки; отвечает на нём человек, а не служба, поэтому ответ занимает столько, сколько занимает.</p>
-<h2>Что приложить, чтобы вопрос решился с первого письма</h2>
-<ol><li>Что вы делали, что ожидали увидеть и что увидели вместо этого.</li><li>Снимок экрана.</li><li>Версия Windows и версия ModBox — она написана в «Настройках», внизу.</li><li>Каким лаунчером создана сборка, какая версия Minecraft и какой загрузчик (Fabric, Forge, NeoForge, Quilt).</li><li>Если ModBox не нашёл вашу установку — где лежит её папка.</li><li>Если игра падала — файл из папки <code>crash-reports</code>.</li></ol>
-<h2>Что ModBox никогда не делает с вашими файлами</h2>
-<p>Он ничего не удаляет безвозвратно. Всё, что убирается из папки модов, переносится в карантин, откуда возвращается одним действием. Если вы столкнулись с обратным — это самое серьёзное, о чём можно сообщить, и написать стоит сразу.</p>
-<h2>Пожаловаться на мод</h2>
-<p>Моды в каталоге написаны третьими лицами, а не MThread. Если вы увидели в каталоге то, чего там быть не должно, воспользуйтесь кнопкой «Пожаловаться» в карточке мода — сообщение придёт нам. Написать на адрес выше тоже можно.</p></div><div data-lang="en"><h1>ModBox support</h1>
-<p>Write to <code>0@MThread.kz</code>. It is the only support address, and a person answers it rather than a service, so a reply takes as long as it takes.</p>
-<h2>What to include, so that one message is enough</h2>
-<ol><li>What you did, what you expected, and what happened instead.</li><li>A screenshot.</li><li>Your Windows version and your ModBox version — it is at the bottom of Settings.</li><li>Which launcher created the instance, which Minecraft version, and which loader (Fabric, Forge, NeoForge, Quilt).</li><li>If ModBox did not find your installation — where its folder is.</li><li>If the game crashed — the file from the <code>crash-reports</code> folder.</li></ol>
-<h2>What ModBox never does to your files</h2>
-<p>It deletes nothing permanently. Anything taken out of the mods folder goes to quarantine, and comes back in one step. If you have seen otherwise, that is the most serious thing you could report, and it is worth writing straight away.</p>
-<h2>Reporting a mod</h2>
-<p>Mods in the catalogue are written by third parties, not by MThread. If you find something in the catalogue that should not be there, use the Report control on the mod's card and the message reaches us. Writing to the address above works too.</p></div>
-</main>
-<footer class="site">
-<p>MThread · <a href="mailto:0@MThread.kz">0@MThread.kz</a></p>
-<p><em class="sub">NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</em></p>
-</footer>
+
+<div class="shell">
+
+  <aside class="rail">
+    <a class="mark" href="../" data-keep-lang>
+      <span class="mark-glyph" aria-hidden="true">MB</span>
+      <span class="mark-name">ModBox<span class="mark-by">MThread</span></span>
+    </a>
+
+    <nav aria-label="Разделы / Sections">
+      <p class="rail-head"><span data-lang="ru">Сайт</span><span data-lang="en">Site</span></p>
+
+      <a class="item" href="../" data-keep-lang>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20H4z"/></svg>
+        <span data-lang="ru">Обзор</span><span data-lang="en">Overview</span>
+      </a>
+      <a class="item" href="../privacy/" data-keep-lang>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3.5 19 6v6c0 4.2-2.9 7.3-7 8.5-4.1-1.2-7-4.3-7-8.5V6z"/></svg>
+        <span data-lang="ru">Конфиденциальность</span><span data-lang="en">Privacy</span>
+      </a>
+      <a class="item" href="../terms/" data-keep-lang>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 3.5h8l4 4V20.5H6z"/><path d="M14 3.5v4h4"/><path d="M9 12h6M9 15.5h6"/></svg>
+        <span data-lang="ru">Условия</span><span data-lang="en">Terms</span>
+      </a>
+      <a class="item" href="../support/" aria-current="page" data-keep-lang>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.2 2.9c-.5.2-.8.7-.8 1.2v.4"/><circle cx="12" cy="17" r=".9" fill="currentColor" stroke="none"/></svg>
+        <span data-lang="ru">Поддержка</span><span data-lang="en">Support</span>
+      </a>
+    </nav>
+
+    <div class="rail-foot">
+      <div class="switch" data-switch="lang" role="group" aria-label="Язык / Language">
+        <button type="button" data-set-lang="ru" aria-pressed="false">Русский</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">English</button>
+      </div>
+      <div class="switch" data-switch="theme" role="group" aria-label="Тема / Theme">
+        <button type="button" data-theme="auto" aria-pressed="false"><span data-lang="ru">Авто</span><span data-lang="en">Auto</span></button>
+        <button type="button" data-theme="light" aria-pressed="false"><span data-lang="ru">Светлая</span><span data-lang="en">Light</span></button>
+        <button type="button" data-theme="dark" aria-pressed="false"><span data-lang="ru">Тёмная</span><span data-lang="en">Dark</span></button>
+      </div>
+    </div>
+  </aside>
+
+  <main class="pane">
+    <div class="page">
+
+      <!-- ================================================== Russian -->
+      <div data-lang="ru">
+        <p class="eyebrow">MThread · Поддержка</p>
+        <h1>Куда писать</h1>
+        <p class="lede">Пишите на <a href="mailto:0@MThread.kz">0@MThread.kz</a>. Это единственный адрес поддержки. Отвечает на нём человек, а не служба: обычно в течение двух рабочих дней, иногда дольше, если вопрос требует разобраться в присланном журнале.</p>
+
+        <h2>Что приложить, чтобы вопрос решился с первого письма</h2>
+        <ul>
+          <li>Что вы делали, что ожидали увидеть и что увидели вместо этого.</li>
+          <li>Снимок экрана.</li>
+          <li>Версия Windows и версия ModBox — она написана в «Настройках», внизу.</li>
+          <li>Каким лаунчером создана сборка, какая версия Minecraft и какой загрузчик (Fabric, Forge, NeoForge, Quilt).</li>
+          <li>Если ModBox не нашёл вашу установку — где лежит её папка.</li>
+          <li>Если игра падала — файл из папки <code>crash-reports</code>.</li>
+          <li>В «Настройках» есть кнопка «Сохранить журнал»: она складывает в один файл то, что приложение записало о своей работе, без имён файлов и путей. Приложите его — с ним разбор идёт быстрее всего.</li>
+        </ul>
+
+        <h2>Если что-то не так в группе</h2>
+        <p>Напишите, сколько человек в группе, кто её создал, у кого проблема и что показывает список участников: сходится ли набор модов, какой пинг. Если мод не доезжает до кого-то одного — назовите этот мод и скажите, есть ли он у остальных.</p>
+
+        <h2>Что ModBox никогда не делает с вашими файлами</h2>
+        <div class="note">
+          <b>Это стоит написать сразу</b>
+          Он ничего не удаляет безвозвратно, и это не зависит от подписки. Всё, что убирается из папки модов, переносится в карантин, откуда возвращается одним действием. Если вы столкнулись с обратным — это самое серьёзное, о чём можно сообщить.
+        </div>
+
+        <h2>Пожаловаться на мод</h2>
+        <p>Моды в каталоге написаны третьими лицами, а не MThread. Если вы увидели в каталоге то, чего там быть не должно, воспользуйтесь кнопкой «Пожаловаться» в карточке мода — сообщение придёт нам. Написать на адрес выше тоже можно.</p>
+
+        <h2>Подписка, оплата, возврат</h2>
+        <p>Подписку продаёт Microsoft, и всё, что касается денег — списания, отмена, возврат, — находится в вашем аккаунте Microsoft, а не у нас. Мы не видим ни платёжных данных, ни истории покупок и не можем ни списать средства, ни вернуть их. Если приложение не видит вашу подписку, а Store её показывает — вот об этом пишите нам, это уже наша часть.</p>
+      </div>
+
+      <!-- ================================================== English -->
+      <div data-lang="en">
+        <p class="eyebrow">MThread · Support</p>
+        <h1>Where to write</h1>
+        <p class="lede">Write to <a href="mailto:0@MThread.kz">0@MThread.kz</a>. It is the only support address. A person answers it rather than a service: usually within two working days, sometimes longer when the question needs the attached log read properly.</p>
+
+        <h2>What to include, so that one message is enough</h2>
+        <ul>
+          <li>What you did, what you expected, and what happened instead.</li>
+          <li>A screenshot.</li>
+          <li>Your Windows version and your ModBox version — it is at the bottom of Settings.</li>
+          <li>Which launcher created the instance, which Minecraft version, and which loader (Fabric, Forge, NeoForge, Quilt).</li>
+          <li>If ModBox did not find your installation — where its folder is.</li>
+          <li>If the game crashed — the file from the <code>crash-reports</code> folder.</li>
+          <li>Settings has a Save log button: it puts what the application recorded about its own work into one file, with no file names and no paths in it. Attach that — it is the fastest thing to work from.</li>
+        </ul>
+
+        <h2>If something is wrong in a group</h2>
+        <p>Tell us how many people are in the group, who made it, who has the problem, and what the member list shows: whether the mod sets match, and what the pings are. If one mod will not reach one person, name that mod and say whether everyone else has it.</p>
+
+        <h2>What ModBox never does to your files</h2>
+        <div class="note">
+          <b>Worth writing about at once</b>
+          It deletes nothing permanently, and that does not depend on the subscription. Anything taken out of the mods folder goes to quarantine, and comes back in one step. If you have seen otherwise, that is the most serious thing you could report.
+        </div>
+
+        <h2>Reporting a mod</h2>
+        <p>Mods in the catalogue are written by third parties, not by MThread. If you find something in the catalogue that should not be there, use the Report control on the mod's card and the message reaches us. Writing to the address above works too.</p>
+
+        <h2>Subscription, payment, refunds</h2>
+        <p>The subscription is sold by Microsoft, and everything to do with money — charges, cancellation, refunds — lives in your Microsoft account, not with us. We see no payment details and no purchase history, and can neither charge you nor refund you. If the application cannot see your subscription while the Store shows it, that one is ours: write to us.</p>
+      </div>
+
+      <footer class="foot">
+        <p>MThread · <a href="mailto:0@MThread.kz">0@MThread.kz</a></p>
+        <p class="disclaimer"><span data-lang="ru">Не является официальным продуктом Minecraft. Не одобрено Mojang или Microsoft и не связано с ними.</span><span data-lang="en">Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</span></p>
+      </footer>
+
+    </div>
+  </main>
 </div>
-<script>
-(function () {
-  var body = document.body;
-  var buttons = document.querySelectorAll('nav.langs button');
-  if (!buttons.length) { return; }
-  function set(lang) {
-    body.setAttribute('data-active', lang);
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].setAttribute('aria-pressed', String(buttons[i].dataset.lang === lang));
-    }
-    try { localStorage.setItem('modbox-lang', lang); } catch (e) { /* private mode */ }
-  }
-  for (var i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', function () { set(this.dataset.lang); });
-  }
-  var saved = null;
-  try { saved = localStorage.getItem('modbox-lang'); } catch (e) { /* ignore */ }
-  set(saved === 'en' || saved === 'ru' ? saved
-      : ((navigator.language || 'en').toLowerCase().indexOf('ru') === 0 ? 'ru' : 'en'));
-})();
-</script>
+
+<script src="../assets/site.js"></script>
 </body>
 </html>
