@@ -3,196 +3,245 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Условия использования — ModBox</title>
+<title data-ru="Условия использования — ModBox" data-en="Terms of use — ModBox">Условия использования — ModBox</title>
 <meta name="robots" content="index, follow" />
-<style>
-:root {
-  color-scheme: light dark;
-  --bg: #ffffff; --fg: #1a1a1a; --muted: #5c6670; --rule: #e2e6ea;
-  --card: #f6f8fa; --accent: #1f6feb;
-  --note-bg: #fff6e0; --note-br: #e0a800;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #14171a; --fg: #e6e9ec; --muted: #98a2ac; --rule: #2b3138;
-    --card: #1b1f24; --accent: #5c9dff;
-    --note-bg: #3a2f12; --note-br: #b98b00;
-  }
-}
-* { box-sizing: border-box; }
-body {
-  margin: 0; background: var(--bg); color: var(--fg);
-  font: 16px/1.65 -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  -webkit-text-size-adjust: 100%;
-}
-.wrap { max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
-header.site { border-bottom: 1px solid var(--rule); margin-bottom: 2rem; padding-bottom: 1rem; }
-header.site a.brand { color: var(--fg); text-decoration: none; font-weight: 600; letter-spacing: .01em; }
-nav.langs { margin: 1rem 0 2rem; display: flex; gap: .5rem; flex-wrap: wrap; }
-nav.langs button {
-  font: inherit; font-size: .9rem; padding: .35rem .9rem; cursor: pointer;
-  background: var(--card); color: var(--fg); border: 1px solid var(--rule); border-radius: 999px;
-}
-nav.langs button[aria-pressed="true"] { background: var(--accent); color: #fff; border-color: var(--accent); }
-h1 { font-size: 1.9rem; line-height: 1.25; margin: 2rem 0 .5rem; }
-h2 { font-size: 1.3rem; line-height: 1.3; margin: 2.5rem 0 .75rem; padding-top: .5rem; border-top: 1px solid var(--rule); }
-h3 { font-size: 1.05rem; margin: 1.75rem 0 .5rem; }
-p, ul, ol { margin: 0 0 1rem; }
-ul, ol { padding-left: 1.4rem; }
-li { margin: .3rem 0; }
-a { color: var(--accent); }
-hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
-code {
-  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; font-size: .9em;
-  background: var(--card); padding: .12em .38em; border-radius: 4px;
-}
-blockquote {
-  margin: 1.25rem 0; padding: .85rem 1.1rem; background: var(--card);
-  border-left: 3px solid var(--rule); border-radius: 0 6px 6px 0; color: var(--muted);
-}
-.tablewrap { overflow-x: auto; margin: 0 0 1rem; }
-table { border-collapse: collapse; width: 100%; font-size: .94rem; }
-th, td { text-align: left; padding: .5rem .7rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
-th { font-weight: 600; }
-em.sub { color: var(--muted); font-style: italic; }
-footer.site { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .88rem; }
-.cards { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); margin: 2rem 0; }
-.cards a {
-  display: block; padding: 1.1rem 1.2rem; background: var(--card);
-  border: 1px solid var(--rule); border-radius: 10px; text-decoration: none; color: var(--fg);
-}
-.cards a strong { display: block; margin-bottom: .3rem; color: var(--accent); }
-.cards a span { color: var(--muted); font-size: .9rem; }
-[data-lang] { display: block; }
-body[data-active="ru"] [data-lang="en"] { display: none; }
-body[data-active="en"] [data-lang="ru"] { display: none; }
-</style>
+<meta name="description" content="Условия использования ModBox. / The terms of use for ModBox." />
+<meta name="theme-color" content="#0f1419" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" />
+<link rel="stylesheet" href="../assets/site.css" />
 </head>
 <body data-active="ru">
-<div class="wrap">
-<header class="site"><a class="brand" href="../">ModBox — MThread</a></header>
-<nav class="langs" aria-label="Language"><button type="button" data-lang="ru" aria-pressed="false">Русский</button><button type="button" data-lang="en" aria-pressed="false">English</button></nav>
-<main>
-<div data-lang="ru"><h1>Условия использования ModBox</h1>
-<p><strong>Дата вступления в силу:</strong> 25 августа 2026 года.</p>
 
-<h2>1. Что действует помимо этого документа</h2>
-<p>ModBox распространяется через Microsoft Store. Ваша лицензия на использование приложения регулируется <strong>Стандартными условиями лицензии на приложение</strong> Microsoft (Standard Application License Terms), которые вы принимаете при установке. Настоящий документ их дополняет и ничего в них не отменяет. Там, где документы расходятся, действуют условия Microsoft.</p>
+<div class="shell">
 
-<h2>2. Что такое ModBox</h2>
-<p>ModBox — вспомогательная программа для управления модами Minecraft: Java Edition на вашем собственном компьютере. Она находит установленные версии игры, ставит загрузчики модов, ищет и устанавливает моды, ресурс-паки и шейдеры, делает снимки перед изменениями и помогает нескольким людям держать одинаковый набор модов.</p>
+  <aside class="rail">
+    <a class="mark" href="../" data-keep-lang>
+      <span class="mark-glyph" aria-hidden="true">MB</span>
+      <span class="mark-name">ModBox<span class="mark-by">MThread</span></span>
+    </a>
 
-<h2>3. Чего ModBox не делает</h2>
-<ul>
-<li><strong>Не продаёт и не поставляет Minecraft.</strong> Игру нужно купить у Mojang отдельно. Без установленной игры ModBox бесполезен.</li>
-<li><strong>Не содержит и не распространяет содержимого Minecraft.</strong> Ни файлов игры, ни ресурсов, ни кода.</li>
-<li><strong>Не спрашивает аккаунт Microsoft или Minecraft</strong> и не запускает игру от вашего имени. Запуск передаётся тому лаунчеру, который у вас уже установлен.</li>
-<li><strong>Не размещает моды.</strong> Каталог показывает то, что публикует Modrinth, и скачивание идёт напрямую оттуда.</li>
-<li><strong>Не держит игровых серверов.</strong> Совместная игра идёт между компьютерами игроков.</li>
-</ul>
+    <nav aria-label="Разделы / Sections">
+      <p class="rail-head"><span data-lang="ru">Сайт</span><span data-lang="en">Site</span></p>
 
-<h2>4. Подписка, пробный период и промокоды</h2>
-<p>Часть возможностей открывается подпиской, которую продаёт Microsoft через Store в виде надстройки к приложению. Цена, налоги, продление, отмена и возврат средств — на стороне Microsoft и регулируются условиями Microsoft Store. Пробный период, если он предложен, предоставляется Microsoft на условиях, показанных в самом Store до оплаты. Промокоды, если они выданы, погашаются в Microsoft Store и подчиняются его правилам.</p>
-<p>MThread не принимает платежей напрямую, не хранит платёжных данных и не может ни списать средства, ни вернуть их: этим полностью распоряжается Microsoft через ваш аккаунт.</p>
+      <a class="item" href="../" data-keep-lang>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20H4z"/></svg>
+        <span data-lang="ru">Обзор</span><span data-lang="en">Overview</span>
+      </a>
+      <a class="item" href="../privacy/" data-keep-lang>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3.5 19 6v6c0 4.2-2.9 7.3-7 8.5-4.1-1.2-7-4.3-7-8.5V6z"/></svg>
+        <span data-lang="ru">Конфиденциальность</span><span data-lang="en">Privacy</span>
+      </a>
+      <a class="item" href="../terms/" aria-current="page" data-keep-lang>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 3.5h8l4 4V20.5H6z"/><path d="M14 3.5v4h4"/><path d="M9 12h6M9 15.5h6"/></svg>
+        <span data-lang="ru">Условия</span><span data-lang="en">Terms</span>
+      </a>
+      <a class="item" href="../support/" data-keep-lang>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.2 2.9c-.5.2-.8.7-.8 1.2v.4"/><circle cx="12" cy="17" r=".9" fill="currentColor" stroke="none"/></svg>
+        <span data-lang="ru">Поддержка</span><span data-lang="en">Support</span>
+      </a>
+    </nav>
 
-<h2>5. Чужое содержимое</h2>
-<p>Моды, ресурс-паки и шейдеры принадлежат их авторам и распространяются на их собственных условиях. ModBox показывает лицензию рядом с каждым модом и открывает страницу автора; соблюдение этих условий — ваша обязанность. MThread не является стороной отношений между вами и автором мода, не отвечает за содержимое, работоспособность или последствия установки чужого мода и не даёт на него никаких гарантий.</p>
-<p>Если вы считаете, что в каталоге показывается то, чего там быть не должно, напишите на <a href="mailto:0@MThread.kz">0@MThread.kz</a>: в приложении для этого есть кнопка, и такое содержимое может быть скрыто без обновления приложения.</p>
+    <div class="rail-foot">
+      <div class="switch" data-switch="lang" role="group" aria-label="Язык / Language">
+        <button type="button" data-set-lang="ru" aria-pressed="false">Русский</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">English</button>
+      </div>
+      <div class="switch" data-switch="theme" role="group" aria-label="Тема / Theme">
+        <button type="button" data-theme="auto" aria-pressed="false"><span data-lang="ru">Авто</span><span data-lang="en">Auto</span></button>
+        <button type="button" data-theme="light" aria-pressed="false"><span data-lang="ru">Светлая</span><span data-lang="en">Light</span></button>
+        <button type="button" data-theme="dark" aria-pressed="false"><span data-lang="ru">Тёмная</span><span data-lang="en">Dark</span></button>
+      </div>
+    </div>
+  </aside>
 
-<h2>6. Ваши файлы</h2>
-<p>ModBox изменяет папки Minecraft на вашем компьютере: переставляет моды, пишет файлы версий, правит настройки. Перед изменениями делается снимок, удалённое кладётся в карантин, и ничто не удаляется безвозвратно. Тем не менее <strong>ответственность за резервные копии остаётся на вас</strong>: миры, сборки и настройки — ваши файлы, и держать их копию разумно независимо от того, какой программой вы пользуетесь.</p>
+  <main class="pane">
+    <div class="page">
 
-<h2>7. Как этим можно и нельзя пользоваться</h2>
-<p>Нельзя: обходить с помощью ModBox чью-либо защиту, лицензию или систему проверки прав; распространять содержимое, на которое у вас нет прав; использовать приложение противозаконно; выдавать изменённые сборки ModBox за оригинал.</p>
+      <!-- ================================================== Russian -->
+      <div data-lang="ru">
+        <p class="eyebrow">MThread · Документ</p>
+        <h1>Условия использования</h1>
+        <p class="updated">Действует с 31 августа 2026 года.</p>
 
-<h2>8. Отсутствие гарантий</h2>
-<p>Насколько это допускает применимое право, приложение предоставляется «как есть», без каких-либо гарантий — явных или подразумеваемых, включая пригодность для конкретной цели и отсутствие нарушений прав третьих лиц. Обязательные права потребителя, которые нельзя исключить по закону вашей страны, этим не затрагиваются.</p>
+        <h2>1. Что действует помимо этого документа</h2>
+        <p>ModBox распространяется через Microsoft Store. Ваша лицензия на использование приложения регулируется <strong>Стандартными условиями лицензии на приложение</strong> Microsoft (Standard Application License Terms), которые вы принимаете при установке. Настоящий документ их дополняет и ничего в них не отменяет. Там, где документы расходятся, действуют условия Microsoft.</p>
 
-<h2>9. Ограничение ответственности</h2>
-<p>Насколько это допускает применимое право, MThread не отвечает за косвенные, случайные, специальные или последующие убытки, за упущенную выгоду и за утрату данных, возникшие в связи с использованием приложения. Совокупная ответственность MThread по любым основаниям ограничена суммой, которую вы фактически уплатили за приложение и его надстройки за двенадцать месяцев, предшествующих событию. Ограничения ответственности, предусмотренные условиями Microsoft Store, действуют дополнительно.</p>
+        <h2>2. Что такое ModBox</h2>
+        <p>ModBox — вспомогательная программа для управления модами Minecraft: Java Edition на вашем собственном компьютере. Она находит установленные версии игры, ставит загрузчики модов, ищет и устанавливает моды, ресурс-паки и шейдеры, умеет снять состояние папки, чтобы к нему можно было вернуться, и помогает нескольким людям держать одинаковый набор модов.</p>
 
-<h2>10. Прекращение</h2>
-<p>Вы прекращаете действие этих условий, удалив приложение. MThread может прекратить их при нарушении раздела 7. Разделы 5, 8 и 9 действуют и после прекращения.</p>
+        <h2>3. Чего ModBox не делает</h2>
+        <ul>
+          <li><strong>Не продаёт и не поставляет Minecraft.</strong> Игру нужно купить у Mojang отдельно. Без установленной игры ModBox бесполезен. На саму игру и на всё, что вы с ней делаете, распространяются <a href="https://www.minecraft.net/eula">лицензионное соглашение Minecraft</a> и <a href="https://www.minecraft.net/usage-guidelines">правила использования Mojang</a>; соблюдать их — ваша обязанность, и ModBox их не отменяет.</li>
+          <li><strong>Не содержит и не распространяет содержимого Minecraft.</strong> Ни файлов игры, ни ресурсов, ни кода.</li>
+          <li><strong>Не спрашивает аккаунт Microsoft или Minecraft</strong> и не запускает игру от вашего имени. Запуск передаётся тому лаунчеру, который у вас уже установлен.</li>
+          <li><strong>Не размещает моды.</strong> Каталог показывает то, что публикует Modrinth, и скачивание идёт напрямую оттуда.</li>
+          <li><strong>Не держит игровых серверов.</strong> Мир остаётся на компьютере того, кто его открыл, и остальные подключаются к нему напрямую. Одну служебную вещь MThread всё же держит — «место встречи», через которое участники находят друг друга; что оно видит и чего не видит, описано в <a href="../privacy/" data-keep-lang>политике конфиденциальности</a>.</li>
+        </ul>
 
-<h2>11. Изменения</h2>
-<p>Если условия изменятся, изменится и дата вверху, а существенные изменения будут названы в примечаниях к выпуску. Продолжая пользоваться приложением после изменения, вы принимаете новую редакцию.</p>
+        <h2>4. Что бесплатно, что входит в подписку</h2>
+        <p>Всё, ради чего ставят менеджер модов, бесплатно и таким останется: список модов, ресурс-паков, шейдеров и карт, установка и удаление, включение и выключение по одному, перетаскивание файлов в окно, поиск, действия над несколькими файлами сразу, распознавание мода внутри <code>.jar</code>, поиск двух файлов с одним идентификатором, предупреждение перед запуском, разбор краш-лога, установка модов из каталога, управление Java, резервная копия и её восстановление, снимок вручную, группа, чат в ней, сведение всех участников к одному набору модов и совместная игра.</p>
+        <p><strong>ModBox PRO</strong> — подписка, которую продаёт Microsoft через Store как надстройку к приложению. Она поднимает ограничения и добавляет то, что перечислено ниже.</p>
+        <div class="tablewrap full">
+          <table>
+            <thead>
+              <tr><th scope="col">Ограничение</th><th scope="col">Бесплатно</th><th scope="col">ModBox&nbsp;PRO</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Профилей</td><td class="num">3</td><td>Без ограничения</td></tr>
+              <tr><td>Участников в группе, которую создали вы</td><td class="num">4</td><td class="num">16</td></tr>
+              <tr><td>Групп одновременно</td><td class="num">1</td><td>Без ограничения</td></tr>
+              <tr><td>Снимков на профиль</td><td>1, снятый вручную</td><td>Без ограничения</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Подписка нужна только тому, кто создаёт группу: её размер закреплён за самой группой, и участвовать в чужой группе на шестнадцать человек ничего не стоит.</p>
+        <p>Кроме того, в подписку входят: автоматическая установка недостающих зависимостей, применение исправления, которое предложил разбор краш-лога, замер производительности и обновление всех модов профиля одним действием с проверкой совместимости.</p>
+        <p>Облачного хранилища в подписке нет — ни бесплатных гигабайт, ни платных. Моды, профили, снимки и миры лежат на вашем компьютере и никуда не уезжают. Если когда-нибудь появится хранение мира в облаке, у него будет своя цена, и подписка к нему отношения иметь не будет.</p>
 
-<h2>12. Применимое право и связь</h2>
-<p>К настоящим условиям применяется право Республики Казахстан, без ущерба для императивных норм защиты прав потребителей той страны, где вы проживаете. Связь: <a href="mailto:0@MThread.kz">0@MThread.kz</a></p>
-<p><em>Не является официальным продуктом Minecraft. Не одобрено Mojang или Microsoft и не связано с ними.</em></p></div>
-<div data-lang="en"><h1>Terms of Use — ModBox</h1>
-<p><strong>Effective date:</strong> 25 August 2026.</p>
+        <h2>5. Оплата, продление, отмена и возврат</h2>
+        <p>Подписку продаёт и обслуживает Microsoft. Цена, налоги, продление, отмена и возврат средств — на стороне Microsoft и регулируются условиями Microsoft Store. <strong>Подписка продлевается автоматически, пока вы её не отмените.</strong> Отменить её и посмотреть историю списаний можно в аккаунте Microsoft: <a href="https://account.microsoft.com/services">account.microsoft.com/services</a>. Отмена оставляет доступ до конца оплаченного срока.</p>
+        <p>Пробный период, если он предложен, предоставляется Microsoft на условиях, показанных в Store до оплаты. Промокоды, если они выданы, погашаются в Microsoft Store и подчиняются его правилам.</p>
+        <p>MThread не принимает платежей напрямую, не хранит платёжных данных и не может ни списать средства, ни вернуть их: этим полностью распоряжается Microsoft через ваш аккаунт.</p>
+        <p><strong>Когда подписка заканчивается</strong>, возможности из таблицы выше перестают работать, но ничего из уже сделанного не пропадает: профили, снимки, резервные копии и файлы остаются на месте и остаются доступными. Если профилей или групп у вас больше, чем оставляет бесплатный уровень, лишние не удаляются — просто нельзя завести ещё, пока их не станет меньше.</p>
+        <p><strong>Когда компьютер офлайн</strong>, приложение помнит последний ответ Store и продолжает открывать платные возможности <strong>31 день</strong>. После этого, до следующей успешной проверки, оно ведёт себя как без подписки. Это сделано для того, чтобы отсутствие сети не отбирало оплаченное, и одновременно чтобы отключённая сеть не превращалась в способ пользоваться подпиской бесконечно.</p>
 
-<h2>1. What else applies</h2>
-<p>ModBox is distributed through the Microsoft Store. Your licence to use the application is governed by Microsoft's <strong>Standard Application License Terms</strong>, which you accept on installation. This document supplements them and overrides nothing in them. Where the two differ, Microsoft's terms apply.</p>
 
-<h2>2. What ModBox is</h2>
-<p>ModBox is a helper for managing Minecraft: Java Edition mods on your own computer. It finds the installations you already have, installs mod loaders, finds and installs mods, resource packs and shaders, takes a snapshot before it changes anything, and helps several people keep the same set of mods.</p>
+        <h2>6. Правила к содержимому каталога</h2>
+        <p>Каталог показывает то, что публикует Modrinth. ModBox отказывается показывать и скачивать то, что нарушает правила ниже, и делает это через список, который каждая копия приложения забирает при открытии каталога, — то есть запрет действует у всех в течение часа и не ждёт обновления приложения.</p>
+        <ul>
+          <li>Вредоносный код: то, что крадёт данные, шифрует файлы, майнит, ставит стороннее ПО или связывается с чужим управляющим сервером.</li>
+          <li>Материалы, распространяемые без прав: чужая работа, выложенная без разрешения автора, и перезалитые чужие моды.</li>
+          <li>Обход защиты и проверки прав, в том числе способы играть без купленной игры.</li>
+          <li>Материалы сексуального характера с участием несовершеннолетних, призывы к насилию и ненависти, травля конкретных людей.</li>
+          <li>То, что рейтинговая система относит к недопустимому для площадки, на которой опубликован ModBox, или что потребовал убрать оператор площадки либо правообладатель.</li>
+        </ul>
+        <p>Если вы считаете, что в каталоге показывается то, чего там быть не должно, воспользуйтесь кнопкой «Пожаловаться» в карточке мода или напишите на <a href="mailto:0@MThread.kz">0@MThread.kz</a>. Если вы автор и считаете, что ваш мод скрыт по ошибке, напишите на тот же адрес: решение пересматривается.</p>
 
-<h2>3. What ModBox does not do</h2>
-<ul>
-<li><strong>It does not sell or supply Minecraft.</strong> The game must be bought from Mojang separately. Without the game installed, ModBox is of no use.</li>
-<li><strong>It contains and redistributes no Minecraft content.</strong> No game files, no assets, no code.</li>
-<li><strong>It never asks for a Microsoft or Minecraft account</strong> and does not start the game on your behalf. Launching is handed to the launcher you already have.</li>
-<li><strong>It does not host mods.</strong> The catalogue shows what Modrinth publishes, and downloads come straight from there.</li>
-<li><strong>It runs no game servers.</strong> Playing together happens between players' own computers.</li>
-</ul>
+        <h2>7. Чужое содержимое</h2>
+        <p>Моды, ресурс-паки и шейдеры принадлежат их авторам и распространяются на их собственных условиях. ModBox показывает лицензию рядом с каждым модом и открывает страницу автора; соблюдение этих условий — ваша обязанность. MThread не является стороной отношений между вами и автором мода, не отвечает за содержимое, работоспособность или последствия установки чужого мода и не даёт на него никаких гарантий.</p>
+        <p>Это относится и к файлам, которые участники группы передают друг другу: ModBox переносит их между вашими компьютерами по вашей же просьбе и не проверяет и не одобряет их содержимое.</p>
+        <p>Правила, по которым содержимое скрывается из каталога, и порядок жалобы — в разделе 6.</p>
 
-<h2>4. Subscription, trial and promotional codes</h2>
-<p>Some features are opened by a subscription that Microsoft sells through the Store as an add-on to the application. Price, tax, renewal, cancellation and refunds are Microsoft's and are governed by the Microsoft Store terms. A trial period, where offered, is provided by Microsoft on the terms shown in the Store before payment. Promotional codes, where issued, are redeemed in the Microsoft Store and follow its rules.</p>
-<p>MThread takes no payment directly, stores no payment details, and can neither charge nor refund: all of that is Microsoft's, through your account.</p>
+        <h2>8. Ваши файлы</h2>
+        <p>ModBox изменяет папки Minecraft на вашем компьютере: переставляет моды, пишет файлы версий, правит настройки. Удалённое кладётся в карантин, и ничто не удаляется безвозвратно, — это так на любом уровне, с подпиской и без. Снимок состояния папки можно снять вручную и бесплатно; снимок, который приложение снимает само перед каждой рискованной операцией, входит в подписку (раздел 4). Тем не менее <strong>ответственность за резервные копии остаётся на вас</strong>: миры, сборки и настройки — ваши файлы, и держать их копию разумно независимо от того, какой программой вы пользуетесь.</p>
 
-<h2>5. Other people's content</h2>
-<p>Mods, resource packs and shaders belong to their authors and are distributed on the authors' own terms. ModBox shows the licence beside each one and opens the author's page; keeping to those terms is your responsibility. MThread is not a party to your relationship with an author, is not responsible for the content, the behaviour or the consequences of installing somebody's mod, and gives no warranty about any of it.</p>
-<p>If you believe the catalogue is showing something it should not, write to <a href="mailto:0@MThread.kz">0@MThread.kz</a>: the application has a button for it, and such content can be hidden without waiting for an update.</p>
+        <h2>9. Как этим можно и нельзя пользоваться</h2>
+        <p>Нельзя: обходить с помощью ModBox чью-либо защиту, лицензию или систему проверки прав; распространять содержимое, на которое у вас нет прав; использовать приложение противозаконно; выдавать изменённые сборки ModBox за оригинал.</p>
 
-<h2>6. Your files</h2>
-<p>ModBox changes Minecraft folders on your computer: it moves mods, writes version files, edits settings. It takes a snapshot before it changes anything, puts removed files in quarantine, and deletes nothing for good. Even so, <strong>keeping backups remains your responsibility</strong>: worlds, packs and settings are your files, and keeping a copy is sensible whatever program you use.</p>
+        <h2>10. Отсутствие гарантий</h2>
+        <p>Насколько это допускает применимое право, приложение предоставляется «как есть», без каких-либо гарантий — явных или подразумеваемых, включая пригодность для конкретной цели и отсутствие нарушений прав третьих лиц. Обязательные права потребителя, которые нельзя исключить по закону вашей страны, этим не затрагиваются.</p>
 
-<h2>7. Acceptable use</h2>
-<p>You may not use ModBox to circumvent anybody's protection, licence or entitlement checking; to distribute content you have no right to; for anything unlawful; or to pass off a modified build of ModBox as the original.</p>
+        <h2>11. Ограничение ответственности</h2>
+        <p>Насколько это допускает применимое право, MThread не отвечает за косвенные, случайные, специальные или последующие убытки, за упущенную выгоду и за утрату данных, возникшие в связи с использованием приложения. Совокупная ответственность MThread по любым основаниям ограничена суммой, которую вы фактически уплатили за приложение и его надстройки за двенадцать месяцев, предшествующих событию. Ограничения ответственности, предусмотренные условиями Microsoft Store, действуют дополнительно.</p>
 
-<h2>8. No warranty</h2>
-<p>To the fullest extent the applicable law allows, the application is provided as is, without warranty of any kind, express or implied, including fitness for a particular purpose and non-infringement. Mandatory consumer rights that cannot be excluded under the law of your country are unaffected.</p>
+        <h2>12. Прекращение</h2>
+        <p>Вы прекращаете действие этих условий, удалив приложение. MThread может прекратить их при нарушении раздела 9. Разделы 7, 10 и 11 действуют и после прекращения.</p>
 
-<h2>9. Limitation of liability</h2>
-<p>To the fullest extent the applicable law allows, MThread is not liable for indirect, incidental, special or consequential loss, for lost profit, or for loss of data arising out of the use of the application. MThread's total liability on any basis is limited to the amount you actually paid for the application and its add-ons in the twelve months before the event. The limitations in the Microsoft Store terms apply in addition.</p>
+        <h2>13. Изменения</h2>
+        <p>Если условия изменятся, изменится и дата вверху, а существенные изменения будут названы в примечаниях к выпуску. Продолжая пользоваться приложением после изменения, вы принимаете новую редакцию.</p>
 
-<h2>10. Termination</h2>
-<p>You end these terms by removing the application. MThread may end them on a breach of section 7. Sections 5, 8 and 9 survive termination.</p>
+        <h2>14. Применимое право и связь</h2>
+        <p>К настоящим условиям применяется право Республики Казахстан, без ущерба для императивных норм защиты прав потребителей той страны, где вы проживаете. Связь: <a href="mailto:0@MThread.kz">0@MThread.kz</a></p>
+      </div>
 
-<h2>11. Changes</h2>
-<p>If these terms change, the date at the top changes with them, and anything material is named in the release notes. Continuing to use the application after a change accepts the new version.</p>
+      <!-- ================================================== English -->
+      <div data-lang="en">
+        <p class="eyebrow">MThread · Document</p>
+        <h1>Terms of use</h1>
+        <p class="updated">Effective 31 August 2026.</p>
 
-<h2>12. Governing law and contact</h2>
-<p>These terms are governed by the law of the Republic of Kazakhstan, without prejudice to the mandatory consumer-protection rules of the country where you live. Contact: <a href="mailto:0@MThread.kz">0@MThread.kz</a></p>
-<p><em>NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</em></p></div>
-</main>
-<footer class="site">
-<p>MThread · <a href="mailto:0@MThread.kz">0@MThread.kz</a></p>
-<p><em class="sub">NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</em></p>
-</footer>
+        <h2>1. What else applies</h2>
+        <p>ModBox is distributed through the Microsoft Store. Your licence to use the application is governed by Microsoft's <strong>Standard Application License Terms</strong>, which you accept on installation. This document supplements them and overrides nothing in them. Where the two differ, Microsoft's terms apply.</p>
+
+        <h2>2. What ModBox is</h2>
+        <p>ModBox is a helper for managing Minecraft: Java Edition mods on your own computer. It finds the installations you already have, installs mod loaders, finds and installs mods, resource packs and shaders, can take a state of the folder to return to, and helps several people keep the same set of mods.</p>
+
+        <h2>3. What ModBox does not do</h2>
+        <ul>
+          <li><strong>It does not sell or supply Minecraft.</strong> The game must be bought from Mojang separately. Without the game installed, ModBox is of no use. The game itself, and everything you do with it, remain subject to the <a href="https://www.minecraft.net/eula">Minecraft End User Licence Agreement</a> and <a href="https://www.minecraft.net/usage-guidelines">Mojang's usage guidelines</a>; keeping to those is your responsibility, and ModBox does not displace them.</li>
+          <li><strong>It contains and redistributes no Minecraft content.</strong> No game files, no assets, no code.</li>
+          <li><strong>It never asks for a Microsoft or Minecraft account</strong> and does not start the game on your behalf. Launching is handed to the launcher you already have.</li>
+          <li><strong>It does not host mods.</strong> The catalogue shows what Modrinth publishes, and downloads come straight from there.</li>
+          <li><strong>It runs no game servers.</strong> The world stays on the machine of whoever opened it, and the others connect to it directly. MThread does run one piece of infrastructure — the meeting place, through which members find each other; what it can and cannot see is described in the <a href="../privacy/" data-keep-lang>privacy policy</a>.</li>
+        </ul>
+
+        <h2>4. What is free, and what the subscription adds</h2>
+        <p>Everything a mod manager is installed for is free and stays free: listing mods, resource packs, shaders and maps, installing and removing them, turning them on and off one at a time, dropping files onto the window, searching, acting on several files at once, recognising the mod inside a <code>.jar</code>, spotting two files claiming one identifier, the warning before launch, reading the crash report, installing mods from the catalogue, managing Java, taking a backup and restoring it, taking a snapshot by hand, a group, its chat, bringing every member onto one set of mods, and playing together.</p>
+        <p><strong>ModBox PRO</strong> is a subscription Microsoft sells through the Store as an add-on to the application. It raises the limits and adds what is listed below.</p>
+        <div class="tablewrap full">
+          <table>
+            <thead>
+              <tr><th scope="col">Limit</th><th scope="col">Free</th><th scope="col">ModBox&nbsp;PRO</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Profiles</td><td class="num">3</td><td>No limit</td></tr>
+              <tr><td>Members in a group you made</td><td class="num">4</td><td class="num">16</td></tr>
+              <tr><td>Groups at once</td><td class="num">1</td><td>No limit</td></tr>
+              <tr><td>Snapshots per profile</td><td>1, taken by hand</td><td>No limit, and one is taken automatically before anything risky</td></tr>
+              <tr><td>The group's world in cloud storage</td><td>5&nbsp;GB</td><td>25&nbsp;GB</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Only the person who makes a group needs the subscription: the size belongs to the group itself, and being in somebody else's group of sixteen costs nothing.</p>
+        <p>The subscription also adds: installing a mod's missing dependencies automatically, applying the fix a crash analysis suggests, measuring performance and choosing JVM arguments from that measurement, updating every mod in a profile in one action with a compatibility check, keeping the group's world and profile manifests in cloud storage, carrying a profile between your own machines, world history deeper than a few days, running your own server, interface themes and a picture for the group.</p>
+
+        <h2>5. Payment, renewal, cancellation and refunds</h2>
+        <p>The subscription is sold and serviced by Microsoft. Price, tax, renewal, cancellation and refunds are Microsoft's and are governed by the Microsoft Store terms. <strong>It renews automatically until you cancel it.</strong> Cancelling, and the record of what you were charged, are in your Microsoft account at <a href="https://account.microsoft.com/services">account.microsoft.com/services</a>. Cancelling leaves access in place until the paid period ends.</p>
+        <p>A trial period, where offered, is provided by Microsoft on the terms shown in the Store before payment. Promotional codes, where issued, are redeemed in the Microsoft Store and follow its rules.</p>
+        <p>MThread takes no payment directly, stores no payment details, and can neither charge nor refund: all of that is Microsoft's, through your account.</p>
+        <p><strong>When the subscription ends</strong>, the capabilities in the table above stop working, but nothing already made is lost: profiles, snapshots, backups and files stay where they are and stay usable. If you hold more profiles or groups than the free tier allows, the extra ones are not deleted — you simply cannot add another until there are fewer.</p>
+        <p><strong>When the computer is offline</strong>, the application remembers the Store's last answer and keeps paid features open for <strong>31 days</strong>. After that, until the next successful check, it behaves as though there were no subscription. That is there so a missing network does not take away what was paid for, while a network switched off on purpose does not become a way to use the subscription for ever.</p>
+
+
+        <h2>6. Rules for what the catalogue shows</h2>
+        <p>The catalogue shows what Modrinth publishes. ModBox refuses to show or download anything that breaks the rules below, and it does so through a list every copy of the application fetches when the catalogue is opened — so a block takes effect everywhere within the hour and does not wait for an update.</p>
+        <ul>
+          <li>Malicious code: anything that steals data, encrypts files, mines, installs other software, or talks to somebody's command server.</li>
+          <li>Material distributed without the right to: somebody's work posted without their permission, and re-uploads of other people's mods.</li>
+          <li>Circumventing protection or entitlement checks, including ways to play without owning the game.</li>
+          <li>Sexual material involving minors, incitement to violence or hatred, and harassment of identifiable people.</li>
+          <li>Anything the rating system places beyond what the storefront ModBox is published on allows, or that the storefront operator or a rights holder has asked to be removed.</li>
+        </ul>
+        <p>If you believe the catalogue is showing something it should not, use the Report control on the mod's card or write to <a href="mailto:0@MThread.kz">0@MThread.kz</a>. If you are an author and believe your mod was hidden by mistake, write to the same address: the decision gets looked at again.</p>
+
+        <h2>7. Other people's content</h2>
+        <p>Mods, resource packs and shaders belong to their authors and are distributed on the authors' own terms. ModBox shows the licence beside each one and opens the author's page; keeping to those terms is your responsibility. MThread is not a party to your relationship with an author, is not responsible for the content, the behaviour or the consequences of installing somebody's mod, and gives no warranty about any of it.</p>
+        <p>The same holds for files that members of a group pass to each other: ModBox moves them between your own computers at your request, and neither inspects nor endorses what is in them.</p>
+        <p>The rules by which something is hidden from the catalogue, and how to report it, are in section 6.</p>
+
+        <h2>8. Your files</h2>
+        <p>ModBox changes Minecraft folders on your computer: it moves mods, writes version files, edits settings. Removed files go to quarantine and nothing is deleted for good — that holds on either tier, subscription or not. A state of the folder can be taken by hand, free; the one the application takes by itself before every risky operation is part of the subscription (section 4). Even so, <strong>keeping backups remains your responsibility</strong>: worlds, packs and settings are your files, and keeping a copy is sensible whatever program you use.</p>
+
+        <h2>9. Acceptable use</h2>
+        <p>You may not use ModBox to circumvent anybody's protection, licence or entitlement checking; to distribute content you have no right to; for anything unlawful; or to pass off a modified build of ModBox as the original.</p>
+
+        <h2>10. No warranty</h2>
+        <p>To the fullest extent the applicable law allows, the application is provided as is, without warranty of any kind, express or implied, including fitness for a particular purpose and non-infringement. Mandatory consumer rights that cannot be excluded under the law of your country are unaffected.</p>
+
+        <h2>11. Limitation of liability</h2>
+        <p>To the fullest extent the applicable law allows, MThread is not liable for indirect, incidental, special or consequential loss, for lost profit, or for loss of data arising out of the use of the application. MThread's total liability on any basis is limited to the amount you actually paid for the application and its add-ons in the twelve months before the event. The limitations in the Microsoft Store terms apply in addition.</p>
+
+        <h2>12. Termination</h2>
+        <p>You end these terms by removing the application. MThread may end them on a breach of section 9. Sections 7, 10 and 11 survive termination.</p>
+
+        <h2>13. Changes</h2>
+        <p>If these terms change, the date at the top changes with them, and anything material is named in the release notes. Continuing to use the application after a change accepts the new version.</p>
+
+        <h2>14. Governing law and contact</h2>
+        <p>These terms are governed by the law of the Republic of Kazakhstan, without prejudice to the mandatory consumer-protection rules of the country where you live. Contact: <a href="mailto:0@MThread.kz">0@MThread.kz</a></p>
+      </div>
+
+      <footer class="foot">
+        <p>MThread · <a href="mailto:0@MThread.kz">0@MThread.kz</a></p>
+        <p class="disclaimer"><span data-lang="ru">Не является официальным продуктом Minecraft. Не одобрено Mojang или Microsoft и не связано с ними.</span><span data-lang="en">Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</span></p>
+      </footer>
+
+    </div>
+  </main>
 </div>
-<script>
-(function () {
-  var body = document.body;
-  var buttons = document.querySelectorAll('nav.langs button');
-  if (!buttons.length) { return; }
-  function set(lang) {
-    body.setAttribute('data-active', lang);
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].setAttribute('aria-pressed', String(buttons[i].dataset.lang === lang));
-    }
-    try { localStorage.setItem('modbox-lang', lang); } catch (e) { /* private mode */ }
-  }
-  for (var i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', function () { set(this.dataset.lang); });
-  }
-  var saved = null;
-  try { saved = localStorage.getItem('modbox-lang'); } catch (e) { /* ignore */ }
-  set(saved === 'en' || saved === 'ru' ? saved
-      : ((navigator.language || 'en').toLowerCase().indexOf('ru') === 0 ? 'ru' : 'en'));
-})();
-</script>
+
+<script src="../assets/site.js"></script>
 </body>
 </html>
