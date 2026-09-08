@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title data-ru="ModBox — MThread" data-en="ModBox — MThread">ModBox — MThread</title>
 <meta name="robots" content="index, follow" />
-<meta name="description" content="ModBox — менеджер модов для Minecraft: Java Edition под Windows и один набор модов на всю компанию. / ModBox is a mod manager for Minecraft: Java Edition on Windows that also keeps a whole group on one set of mods." />
+<meta name="description" content="Документы ModBox: условия использования и поддержка. / ModBox documents: terms of use and support." />
 <meta name="theme-color" content="#0f1419" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,10 +28,6 @@
       <a class="item" href="" aria-current="page" data-keep-lang>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20H4z"/></svg>
         <span data-lang="ru">Обзор</span><span data-lang="en">Overview</span>
-      </a>
-      <a class="item" href="privacy/" data-keep-lang>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3.5 19 6v6c0 4.2-2.9 7.3-7 8.5-4.1-1.2-7-4.3-7-8.5V6z"/></svg>
-        <span data-lang="ru">Конфиденциальность</span><span data-lang="en">Privacy</span>
       </a>
       <a class="item" href="terms/" data-keep-lang>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 3.5h8l4 4V20.5H6z"/><path d="M14 3.5v4h4"/><path d="M9 12h6M9 15.5h6"/></svg>
@@ -62,65 +58,18 @@
       <!-- ================================================== Russian -->
       <div data-lang="ru">
         <p class="eyebrow">MThread</p>
-        <h1>Порядок в папке модов — и одна сборка на всю компанию.</h1>
-        <p class="lede">Менеджер модов для <strong>Minecraft: Java&nbsp;Edition</strong> под Windows. Он читает вашу папку модов, объясняет, что в ней не так, и приводит её в порядок. А потом держит этот же набор у всех, с кем вы играете, — без сервера и без пересылки файлов вручную.</p>
+        <h1>ModBox</h1>
+        <p class="lede">Менеджер модов для <strong>Minecraft: Java&nbsp;Edition</strong> под Windows.
+        Что он умеет, снимки экрана и установка — на странице в <a href="https://apps.microsoft.com/detail/9MX2ZKZRB03H">Microsoft Store</a>.
+        Здесь лежит только то, чего в магазине нет: документы, на которые ссылается приложение.</p>
 
-        <h2>Моды</h2>
-        <p>Каждый <code>.jar</code> разбирается, и то, что мод говорит о себе, сверяется с остальной папкой: версия игры, загрузчик, обязательные зависимости, конфликты, два файла под одним идентификатором, два мода, переписывающих один и тот же код игры. Всё это видно до того, как вы нажали «Играть».</p>
-
-        <div class="check full" role="img" aria-label="Пример проверки перед запуском: два мода прочитаны без замечаний, один переписывает тот же код, что другой, одному не хватает зависимости.">
-          <div class="check-bar">
-            <b>Проверка перед запуском</b>
-            <span>Minecraft 26.2 · Fabric · 25 модов</span>
-          </div>
-          <ul class="check-rows">
-            <li class="ok"   style="--i:0"><span class="sign" aria-hidden="true">✓</span><span class="file">alternate-current-mc26.2-1.9.0.jar</span></li>
-            <li class="ok"   style="--i:1"><span class="sign" aria-hidden="true">✓</span><span class="file">cloth-config-26.2.155.jar</span></li>
-            <li class="warn" style="--i:2"><span class="sign" aria-hidden="true">!</span><span class="file">ferritecore-9.0.0-fabric.jar</span><span class="why">переписывает те же методы игры, что и lithium — правка одного из двух пропадёт молча</span></li>
-            <li class="stop" style="--i:3"><span class="sign" aria-hidden="true">✕</span><span class="file">distanthorizons-3.2.0-b.jar</span><span class="why">просит «sodium», а его нет — игра встанет на загрузочном экране</span></li>
-          </ul>
-          <div class="check-foot">
-            <span class="tag stop">Не даст запуститься · 1</span>
-            <span class="tag warn">Вероятно, вызовет проблемы · 1</span>
-            <span class="tag ok">Прочитано без замечаний · 23</span>
-          </div>
-        </div>
-
-        <p>Найти и поставить мод, ресурс-пак или шейдер можно не выходя из приложения. Состояние папки можно снять и вернуться к нему потом, а удалённое лежит в карантине и возвращается одним нажатием. Если игра всё-таки упала, ModBox читает краш-лог и называет файл, на котором она упала, вместо простыни из стектрейса.</p>
-
-        <h2>Группы</h2>
-        <p>Группа — это несколько человек и один набор модов на всех. Приглашение переезжает одной ссылкой; дальше приложение само сверяет, у кого чего не хватает, и достаёт недостающее у участника с самым низким пингом, а не с сайта. Сервер для этого не нужен: компьютеры соединяются напрямую.</p>
-
-        <div class="crew full" role="img" aria-label="Пример группы: у троих набор совпадает, четвёртому не хватает одного мода, и этот мод приходит от участника с самым низким пингом.">
-          <div class="check-bar">
-            <b>Группа «Вечер вторника»</b>
-            <span>4 участника · 25 модов</span>
-          </div>
-          <ul class="crew-rows">
-            <li><span class="who">maxawer <span class="role">· создал группу</span></span><span class="ping">12 мс</span><span class="state ok">набор совпадает</span></li>
-            <li><span class="who">dvornik</span><span class="ping">19 мс</span><span class="state ok">набор совпадает</span></li>
-            <li><span class="who">kotya</span><span class="ping">41 мс</span><span class="state ok">набор совпадает</span></li>
-            <li><span class="who">tenshi</span><span class="ping">86 мс</span><span class="state warn">не хватает одного мода: sodium</span></li>
-          </ul>
-          <div class="crew-foot">
-            sodium-0.7.4.jar придёт к tenshi <b>от dvornik</b> — из тех, у кого этот файл есть, у него самый низкий пинг.
-          </div>
-        </div>
-
-        <p>Моды сверяются по содержимому файла, а не по имени: переименованный <code>.jar</code> остаётся тем же модом, и лишней раздачи не будет. Открыть мир для группы тоже можно из приложения — соединение идёт между компьютерами игроков.</p>
-
-        <h2>Документы</h2>
         <ul class="cards">
-          <li><a href="privacy/" data-keep-lang><strong>Политика конфиденциальности</strong><span>Что остаётся на вашем компьютере, что уходит наружу и куда именно.</span></a></li>
           <li><a href="terms/" data-keep-lang><strong>Условия использования</strong><span>Что бесплатно, что входит в подписку и за что мы не отвечаем.</span></a></li>
           <li><a href="support/" data-keep-lang><strong>Поддержка</strong><span>Куда писать, что приложить и когда ждать ответа.</span></a></li>
         </ul>
 
-        <h2>Коротко</h2>
         <dl class="facts">
           <div><dt>Издатель</dt><dd>MThread</dd></div>
-          <div><dt>Платформа</dt><dd>Windows 10 версии 17763 и новее, x64 и Arm64</dd></div>
-          <div><dt>Где взять</dt><dd><a href="https://apps.microsoft.com/detail/9MX2ZKZRB03H">Microsoft Store</a></dd></div>
           <div><dt>Связь</dt><dd><a href="mailto:0@MThread.kz">0@MThread.kz</a></dd></div>
         </dl>
       </div>
@@ -128,65 +77,18 @@
       <!-- ================================================== English -->
       <div data-lang="en">
         <p class="eyebrow">MThread</p>
-        <h1>Order in the mods folder — and one set of mods for everyone you play with.</h1>
-        <p class="lede">A mod manager for <strong>Minecraft: Java&nbsp;Edition</strong> on Windows. It reads your mods folder, explains what is wrong with it, and puts it right. Then it keeps that same set on every machine in your group — with no server and no passing files around by hand.</p>
+        <h1>ModBox</h1>
+        <p class="lede">A mod manager for <strong>Minecraft: Java&nbsp;Edition</strong> on Windows.
+        What it does, the screenshots and the install live on the <a href="https://apps.microsoft.com/detail/9MX2ZKZRB03H">Microsoft Store</a> page.
+        This site keeps only what the Store cannot: the documents the application links to.</p>
 
-        <h2>Mods</h2>
-        <p>Every <code>.jar</code> is parsed, and what a mod says about itself is checked against the rest of the folder: the game version, the loader, required dependencies, conflicts, two files claiming one identifier, two mods rewriting the same game code. All of it before you press Play.</p>
-
-        <div class="check full" role="img" aria-label="An example pre-flight check: two mods read without comment, one overwrites the same code as another, one is missing a dependency.">
-          <div class="check-bar">
-            <b>Pre-flight check</b>
-            <span>Minecraft 26.2 · Fabric · 25 mods</span>
-          </div>
-          <ul class="check-rows">
-            <li class="ok"   style="--i:0"><span class="sign" aria-hidden="true">✓</span><span class="file">alternate-current-mc26.2-1.9.0.jar</span></li>
-            <li class="ok"   style="--i:1"><span class="sign" aria-hidden="true">✓</span><span class="file">cloth-config-26.2.155.jar</span></li>
-            <li class="warn" style="--i:2"><span class="sign" aria-hidden="true">!</span><span class="file">ferritecore-9.0.0-fabric.jar</span><span class="why">overwrites the same game methods as lithium — one of the two edits will vanish silently</span></li>
-            <li class="stop" style="--i:3"><span class="sign" aria-hidden="true">✕</span><span class="file">distanthorizons-3.2.0-b.jar</span><span class="why">asks for “sodium”, which is not there — the game will hang on the loading screen</span></li>
-          </ul>
-          <div class="check-foot">
-            <span class="tag stop">Will stop the game · 1</span>
-            <span class="tag warn">Likely to cause trouble · 1</span>
-            <span class="tag ok">Read without comment · 23</span>
-          </div>
-        </div>
-
-        <p>Mods, resource packs and shaders can be found and installed without leaving the application. A state of the folder can be taken and returned to later, and what you remove sits in quarantine and comes back with one press. If the game does fall over, ModBox reads the crash report and names the file it fell over on, instead of a wall of stack trace.</p>
-
-        <h2>Groups</h2>
-        <p>A group is several people and one set of mods between them. The invitation travels as a single link; from there the application works out who is missing what, and fetches the missing file from the member with the lowest ping rather than from a website. No server is needed: the computers connect to each other directly.</p>
-
-        <div class="crew full" role="img" aria-label="An example group: three members match, a fourth is missing one mod, and that mod arrives from the member with the lowest ping.">
-          <div class="check-bar">
-            <b>Group “Tuesday evening”</b>
-            <span>4 members · 25 mods</span>
-          </div>
-          <ul class="crew-rows">
-            <li><span class="who">maxawer <span class="role">· made the group</span></span><span class="ping">12 ms</span><span class="state ok">set matches</span></li>
-            <li><span class="who">dvornik</span><span class="ping">19 ms</span><span class="state ok">set matches</span></li>
-            <li><span class="who">kotya</span><span class="ping">41 ms</span><span class="state ok">set matches</span></li>
-            <li><span class="who">tenshi</span><span class="ping">86 ms</span><span class="state warn">missing one mod: sodium</span></li>
-          </ul>
-          <div class="crew-foot">
-            sodium-0.7.4.jar reaches tenshi <b>from dvornik</b> — of everyone who has that file, his ping is the lowest.
-          </div>
-        </div>
-
-        <p>Mods are matched by the contents of the file, not by its name: a renamed <code>.jar</code> is still the same mod, and nothing is sent twice. Opening a world to the group happens from the application too — the connection runs between the players' own computers.</p>
-
-        <h2>Documents</h2>
         <ul class="cards">
-          <li><a href="privacy/" data-keep-lang><strong>Privacy policy</strong><span>What stays on your computer, what leaves it, and exactly where it goes.</span></a></li>
           <li><a href="terms/" data-keep-lang><strong>Terms of use</strong><span>What is free, what the subscription adds, and what we are not answerable for.</span></a></li>
           <li><a href="support/" data-keep-lang><strong>Support</strong><span>Where to write, what to attach, and when to expect an answer.</span></a></li>
         </ul>
 
-        <h2>In short</h2>
         <dl class="facts">
           <div><dt>Publisher</dt><dd>MThread</dd></div>
-          <div><dt>Platform</dt><dd>Windows 10 build 17763 and later, x64 and Arm64</dd></div>
-          <div><dt>Where to get it</dt><dd><a href="https://apps.microsoft.com/detail/9MX2ZKZRB03H">Microsoft Store</a></dd></div>
           <div><dt>Contact</dt><dd><a href="mailto:0@MThread.kz">0@MThread.kz</a></dd></div>
         </dl>
       </div>
