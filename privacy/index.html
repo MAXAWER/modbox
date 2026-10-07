@@ -62,83 +62,117 @@
       <!-- ================================================== Russian -->
       <div data-lang="ru">
         <p class="eyebrow">MThread · Документ</p>
-        <h1>Политика конфиденциальности</h1>
-        <p class="updated">Действует с 8 сентября 2026 года. Издатель: MThread. Связь: <a href="mailto:0@MThread.kz">0@MThread.kz</a></p>
+        <h1>Политика конфиденциальности ModBox</h1>
+        <p class="updated">Редакция от 8 октября 2026 года. Применяется к ModBox 3.0.32.0 и более новым версиям. Издатель — MThread. Связь: <a href="mailto:0@MThread.kz">0@MThread.kz</a>.</p>
 
-        <p><strong>Коротко:</strong> в ModBox нет учётной записи и нет входа, и MThread не собирает о вас ничего. Ваши профили, моды, резервные копии и миры остаются на вашем компьютере. ModBox выходит в интернет, но только за тем, что вы попросили скачать.</p>
-
-        <h2>1. Что мы собираем</h2>
-        <p>Ничего. ModBox не отправляет MThread ни персональных данных, ни статистики использования, ни аналитики, ни идентификаторов, ни отчётов о сбоях. Учётную запись создавать негде, и входить некуда. У нас нет сервера, который принимал бы ваши данные, и нет способа увидеть, что вы делаете в приложении.</p>
-
-        <h2>2. Что остаётся на вашем компьютере</h2>
-        <p>Всё, с чем работает ModBox, хранится в вашей собственной пользовательской папке Windows: созданные вами профили, список прочитанных модов, резервные копии и архивы миров, выгруженные файлы, настройки и диагностический журнал. Ничто из этого никуда не загружается.</p>
-
-        <h2>3. Что уходит с вашего компьютера — и только по вашей просьбе</h2>
-        <p>Чтобы скачать то, что вы попросили, ModBox обращается к службе, которая это хранит. Эта служба видит ваш IP-адрес и сам запрос — ровно так же, как если бы вы открыли ту же страницу в браузере. Ни имени, ни идентификатора, ни учётной записи ModBox ей не передаёт.</p>
+        <p><strong>Коротко.</strong> Своей аналитики, рекламы и слежки в ModBox нет, и мы ничего не продаём. Всё, с чем вы работаете, — сборки, моды, миры, резервные копии, настройки, журнал — лежит на вашем компьютере. В сеть ModBox выходит, чтобы скачать то, что вы попросили, и для функций, которые вы включаете сами: игра с друзьями, вход через Microsoft, Telegram-бот. Всё, что для этого уходит в базы данных, зашифровано ключами, которых у MThread нет, кроме сведений для бота: их видит владелец компьютера через свой Telegram.</p>
+        <h2>1. Что хранится на вашем компьютере</h2>
+        <p>Сборки (профили), моды, ресурс-паки и шейдеры, карантин удалённого, снимки папок, резервные копии миров, серверы Minecraft, настройки и диагностический журнал. Настройки, список сборок и групп зашифрованы ключом, который защищает Windows для вашей учётной записи. Ничто из этого не загружается само. Удаление ModBox удаляет его папку данных.</p>
+        <h2>2. Скачивания</h2>
+        <p>Когда вы просите, ModBox скачивает файлы у служб, которые их хранят: Modrinth (каталог модов, ресурс-паков, шейдеров и сборок), Mojang (список версий Minecraft и файлы сервера), сайты загрузчиков модов Fabric, Quilt, Forge и NeoForge, PaperMC (серверы Paper), Eclipse Adoptium (Java). С maxawer.github.io ModBox читает список модов, скрытых из каталога. Эти службы видят ваш IP-адрес и сам запрос — как при открытии страницы в браузере. Имени, идентификатора или аккаунта ModBox им не передаёт.</p>
+        <h2>3. Игра с друзьями</h2>
+        <p>Функции «Вместе»: группы по коду, общий список серверов группы, подключение друг к другу. Для них ModBox пользуется Google Firebase (Realtime Database и анонимный вход, серверы в США). Вход анонимный, без имени и почты.</p>
         <ul>
-          <li><strong>Modrinth</strong> (<code>api.modrinth.com</code>, <code>cdn.modrinth.com</code>) — поиск и скачивание модов, ресурс-паков и шейдеров.</li>
-          <li><strong>Mojang</strong> (<code>piston-meta.mojang.com</code>) — список версий Minecraft.</li>
-          <li><strong>FabricMC, QuiltMC, MinecraftForge и NeoForged</strong> — файлы загрузчиков модов, когда вы ставите загрузчик.</li>
-          <li><strong>Eclipse Adoptium</strong> (<code>api.adoptium.net</code>) — среды Java, когда вы ставите одну из них.</li>
-          <li><strong>maxawer.github.io</strong> — небольшой файл со списком записей каталога, изъятых по правовым соображениям или соображениям безопасности.</li>
+          <li><em>Группа.</em> В базе хранится документ группы: её название, имена, которые участники выбрали для показа, и их идентификаторы ModBox. Документ зашифрован ключом, который выводится из кода группы, поэтому прочитать его может только тот, у кого есть код. Когда вы выходите из группы, ваша запись из документа убирается; когда создатель удаляет группу, удаляется документ.</li>
+          <li><em>Объявления.</em> Пока вы играете, ModBox держит в базе короткое объявление: ваше имя для показа, название открытого мира или сервера, кто его ведёт, сетевые адреса, по которым до вашего компьютера можно достучаться, а для открытого сервера — сколько на нём игроков и их ники в Minecraft. Объявление зашифровано так же и истекает через несколько минут. Когда участник запускает сервер для группы, остальным остаётся короткая зашифрованная записка об этом.</li>
+          <li><em>Локальная сеть.</em> Другим компьютерам вашей сети ModBox сообщает об открытом мире в зашифрованном виде.</li>
+          <li><em>Адреса.</em> Чтобы узнать внешний адрес компьютера, ModBox спрашивает публичные STUN-серверы Google и Cloudflare — они видят ваш IP-адрес. При прямом подключении компьютеры видят IP-адреса друг друга.</li>
+          <li><em>Роутер.</em> Если вы включили открытие порта на роутере, ModBox просит об этом ваш роутер (UPnP или NAT-PMP). Этот запрос не выходит за пределы вашей сети.</li>
+          <li><em>Передача сервера.</em> Когда вы отправляете свой сервер на другой компьютер по разовому коду, в базе на время поиска лежат имена для показа, название сервера и адреса обоих компьютеров, зашифрованные ключом из кода; они удаляются по окончании и в любом случае истекают через несколько минут. Сам сервер — миры, настройки, моды, списки игроков — идёт напрямую с компьютера на компьютер, зашифрованным, и через базу не проходит.</li>
         </ul>
-        <p>У каждой из этих служб своя политика конфиденциальности, и именно она определяет, что служба делает с запросом.</p>
-
-        <h2>4. Подписка</h2>
-        <p>ModBox PRO — необязательная подписка, которую продаёт Microsoft Store. Покупкой распоряжается Microsoft; приложению она сообщает только одно — действует подписка сейчас или нет. Ни вашего имени, ни платёжных данных, ни аккаунта Microsoft ModBox не видит. Подписка управляется и отменяется в вашем аккаунте Microsoft.</p>
-
-        <h2>5. Сообщение о проблеме</h2>
-        <p>Автоматически не отправляется ничего. Когда вы нажимаете «Сообщить о проблеме», ModBox открывает вашу собственную почтовую программу с уже написанным текстом; пока вы не нажмёте «отправить» там, с компьютера не уходит ничего. Диагностические журналы остаются на вашей машине, если вы сами не приложите один из них.</p>
-
-        <h2>6. Дети</h2>
-        <p>В ModBox нет учётных записей, нет обмена сообщениями и нет пользовательского содержимого, и он ничего не собирает ни у кого, независимо от возраста.</p>
-
-        <h2>7. Изменения этой политики</h2>
-        <p>Если в будущей версии ModBox появится возможность, которая начнёт что-то передавать — например, совместная игра по сети, — эта политика будет обновлена <strong>до выхода</strong> такой версии, а само изменение будет описано в карточке Store.</p>
-
-        <h2>8. Связь</h2>
-        <p>Вопросы по этой политике: <a href="mailto:0@MThread.kz">0@MThread.kz</a></p>
+        <h2>4. Подключение через сервер ModBox</h2>
+        <p>Если напрямую подключиться не выходит, а у того, кто ведёт игру, есть ModBox PRO, игровой трафик идёт через ту же базу Firebase. Он шифруется ещё на компьютере, поэтому ни MThread, ни Google его не прочитают, и каждая часть удаляется сразу после доставки, а недоставленная — через десять минут.</p>
+        <h2>5. Аккаунт Microsoft (по желанию)</h2>
+        <p>Всё работает и без входа. Если вы входите, ModBox получает от Windows идентификатор аккаунта и отображаемое имя. Тогда ваш идентификатор в ModBox, имя для показа, настройки и коды ваших групп хранятся в Firebase, чтобы переехать с вами на другой компьютер, — зашифрованными ключом из вашего аккаунта. Пароль ModBox не видит: вход проходит в окне Windows. Выход из аккаунта прекращает синхронизацию.</p>
+        <h2>6. Ваш сервер Minecraft</h2>
+        <p>Сервер, который вы запускаете в ModBox, работает на вашем компьютере. Игроки подключаются к нему напрямую; их ники и IP-адреса видит сам сервер и пишет в свой журнал на вашем компьютере, как любой сервер Minecraft. MThread этих данных не получает.</p>
+        <h2>7. Telegram-бот (по желанию)</h2>
+        <p>Если вы привязываете компьютер к боту MThread Craft в Telegram, введя в боте восьмизначный код или отсканировав QR-код из ModBox, ModBox анонимно входит в базу Firebase бота (Google, серверы в Бельгии) и пишет туда:</p>
+        <ul>
+          <li>имя компьютера, версию ModBox, объём памяти, загрузку процессора, свободное место на диске, версию Windows;</li>
+          <li>по каждому серверу ModBox — название, настройки и состояние, ники игроков на нём и сколько заходило, название, размер и точку появления мира, внешний адрес для подключения, если роутер открыл порт;</li>
+          <li>моменты входа и выхода игроков, запуска, остановки и падения серверов, а при падении — последние строки журнала сервера;</li>
+          <li>пока сервер открыт в боте — положение, измерение, направление взгляда и здоровье игроков, нагрузку сервера, строки консоли и картинки местности вокруг игроков и точки появления, нарисованные из файлов мира;</li>
+          <li>результаты команд, которые пришли из бота (запуск, остановка, строка консоли, действие модерации).</li>
+        </ul>
+        <p>Строки очищаются до отправки: сетевые адреса заменяются, строка с паролем, токеном, секретом или ключом API не уходит вовсе, чат игроков не уходит никогда. Всё это видит только аккаунт Telegram, к которому привязан компьютер. Отвязка — в ModBox или в боте — удаляет всё. Сам Telegram обрабатывает вашу переписку с ботом по своей политике конфиденциальности.</p>
+        <h2>8. Microsoft Store</h2>
+        <p>ModBox PRO продаёт и списывает Microsoft Store; платёжных данных ModBox не видит. Он спрашивает у Store, действует ли подписка, и хранит ответ на компьютере. При запуске ModBox спрашивает у Store, не вышла ли новая версия, и ставит её через Store; это выключается в настройках. Иногда ModBox предлагает оценить приложение — окно оценки показывает сам Store.</p>
+        <h2>9. Отчёты о сбоях и обращения</h2>
+        <p>Если в Windows включена отправка диагностических данных, служба отчётов об ошибках Windows может отправить Microsoft отчёт, когда ModBox зависает или закрывается с ошибкой. ModBox добавляет в него технические сведения: версию сборки, номер сеанса, версию Windows, открытый экран, последние действия в интерфейсе, сколько раз окно подвисало и что было запущено. Имён, путей к файлам и данных аккаунта там нет. Эти отчёты MThread видит в Partner Center без сведений о том, чей это компьютер. «Сообщить о проблеме» и «Пожаловаться» на мод открывают вашу почтовую программу; ничего не уходит, пока вы сами не отправите письмо.</p>
+        <h2>10. Сроки хранения</h2>
+        <ul>
+          <li>Объявления об игре, данные передачи сервера — несколько минут.</li>
+          <li>Части трафика через сервер ModBox — до доставки, не дольше десяти минут.</li>
+          <li>Документ группы — пока группа существует; ваша запись — пока вы в ней.</li>
+          <li>Запись аккаунта — пока вы пользуетесь входом.</li>
+          <li>Данные бота — пока компьютер привязан.</li>
+          <li>Всё на компьютере — пока вы не удалите это или ModBox.</li>
+        </ul>
+        <h2>11. Ваш выбор</h2>
+        <p>Не входить в аккаунт, не вступать в группы, не привязывать бота — всё остальное работает. Выйти из группы, выйти из аккаунта, отвязать бота, выключить проверку обновлений и открытие порта на роутере можно в любой момент. По вопросам о ваших данных пишите на <a href="mailto:0@MThread.kz">0@MThread.kz</a>; так как записи зашифрованы ключами, которых у нас нет, мы не можем их прочитать, но поможем удалить то, что относится к вам.</p>
+        <h2>12. Дети</h2>
+        <p>В ModBox нет чата и публичных профилей; друзья добавляются только обменом кодами. Бот видит только тот, кто привязал свой компьютер.</p>
+        <h2>13. Изменения</h2>
+        <p>Политика обновляется до выхода версии, которая передаёт что-то, здесь не описанное. Дата редакции стоит вверху.</p>
       </div>
 
       <!-- ================================================== English -->
       <div data-lang="en">
         <p class="eyebrow">MThread · Document</p>
-        <h1>Privacy policy</h1>
-        <p class="updated">Effective date: 8 September 2026. Publisher: MThread. Contact: <a href="mailto:0@MThread.kz">0@MThread.kz</a></p>
+        <h1>ModBox Privacy Policy</h1>
+        <p class="updated">Revised 8 October 2026. Applies to ModBox 3.0.32.0 and later. Published by MThread. Contact: <a href="mailto:0@MThread.kz">0@MThread.kz</a>.</p>
 
-        <p><strong>In short:</strong> ModBox has no account and no sign-in, and MThread collects nothing about you. Your profiles, mods, backups and worlds stay on your computer. ModBox does reach the internet, but only to fetch what you ask it to fetch.</p>
-
-        <h2>1. What we collect</h2>
-        <p>Nothing. ModBox sends MThread no personal data, no usage statistics, no analytics, no identifiers and no crash reports. There is no account to create and nothing to sign in to. We have no server that receives your data, and no way to see what you do in the application.</p>
-
-        <h2>2. What stays on your computer</h2>
-        <p>Everything ModBox works with is stored in your own Windows user folder: the profiles you create, the list of mods it has read, the backups and world archives you take, files you export, your settings, and a diagnostic log. None of it is uploaded anywhere.</p>
-
-        <h2>3. What leaves your computer, and only at your request</h2>
-        <p>To download something you asked for, ModBox contacts the service that hosts it. That service sees your IP address and the request, exactly as it would if you opened the same page in a browser. ModBox sends it no name, no identifier and no account.</p>
+        <p><strong>In short.</strong> ModBox has no analytics, advertising or tracking of its own, and we sell nothing about you. Everything you work with — profiles, mods, worlds, backups, settings, the log — stays on your computer. ModBox goes online to download what you ask for and for features you turn on yourself: playing with friends, signing in with Microsoft, the Telegram bot. What these put into databases is encrypted with keys MThread does not have, except the bot's data, which the computer's owner sees through their own Telegram.</p>
+        <h2>1. What stays on your computer</h2>
+        <p>Profiles, mods, resource packs and shaders, the quarantine of removed files, folder snapshots, world backups, Minecraft servers, settings and the diagnostic log. Settings and the lists of profiles and groups are encrypted with a key Windows protects for your user account. Nothing here is uploaded by itself. Uninstalling ModBox removes its data folder.</p>
+        <h2>2. Downloads</h2>
+        <p>When you ask, ModBox downloads files from the services that host them: Modrinth (mods, resource packs, shaders and modpacks), Mojang (the list of Minecraft versions and server files), the Fabric, Quilt, Forge and NeoForge mod loader sites, PaperMC (Paper servers), Eclipse Adoptium (Java). From maxawer.github.io ModBox reads the list of mods hidden from the catalogue. These services see your IP address and the request, as a browser visit would. ModBox sends them no name, identifier or account.</p>
+        <h2>3. Playing with friends</h2>
+        <p>The Together features — groups joined by code, a group's list of servers, connecting to each other — use Google Firebase (Realtime Database and anonymous sign-in, located in the United States). Sign-in is anonymous, without a name or e-mail address.</p>
         <ul>
-          <li><strong>Modrinth</strong> (<code>api.modrinth.com</code>, <code>cdn.modrinth.com</code>) — searching for and downloading mods, resource packs and shader packs.</li>
-          <li><strong>Mojang</strong> (<code>piston-meta.mojang.com</code>) — the list of Minecraft versions.</li>
-          <li><strong>FabricMC, QuiltMC, MinecraftForge and NeoForged</strong> — mod loader files, when you install a loader.</li>
-          <li><strong>Eclipse Adoptium</strong> (<code>api.adoptium.net</code>) — Java runtimes, when you install one.</li>
-          <li><strong>maxawer.github.io</strong> — a small file listing catalogue entries removed for legal or safety reasons.</li>
+          <li><em>Groups.</em> The database keeps a group document: the group's name, the names its members chose to show and their ModBox identifiers, encrypted with a key derived from the group's code, so only someone with the code can read it. Leaving a group removes your entry; when the creator deletes the group, the document is deleted.</li>
+          <li><em>Notices.</em> While you play, ModBox keeps a short notice in the database: the name you show, the name of the open world or server, who is hosting, the network addresses your computer can be reached at, and for an open server how many people play on it and their Minecraft names. It is encrypted the same way and expires within minutes. When a member starts a server for the group, the others get a short encrypted note saying so.</li>
+          <li><em>Local network.</em> ModBox tells other computers on your network about an open world, encrypted.</li>
+          <li><em>Addresses.</em> To learn its public address, ModBox asks public STUN servers run by Google and Cloudflare, which see your IP address. Computers that connect directly see each other's IP addresses.</li>
+          <li><em>Router.</em> If you turn on opening a port on the router, ModBox asks your router to do it (UPnP or NAT-PMP). That request stays inside your network.</li>
+          <li><em>Sending a server.</em> When you send one of your servers to another computer with a one-time code, the database holds, while the two look for each other, the names you show, the server's name and both computers' addresses, encrypted with a key derived from the code; they are removed when the transfer ends and expire within minutes in any case. The server itself — worlds, settings, mods, player lists — travels directly between the computers, encrypted, and never through the database.</li>
         </ul>
-        <p>Each of these services has its own privacy policy, which governs what it does with the request.</p>
-
-        <h2>4. The subscription</h2>
-        <p>ModBox PRO is an optional subscription sold by the Microsoft Store. Microsoft handles the purchase; it tells ModBox only whether a subscription is currently active. ModBox never sees your name, your payment details or your Microsoft account. The subscription is managed and cancelled in your Microsoft account.</p>
-
-        <h2>5. Reporting a problem</h2>
-        <p>Nothing is sent automatically. If you use “Report a problem”, ModBox opens your own mail application with the text prepared for you; nothing leaves your computer until you press send there. Diagnostic logs stay on your machine unless you choose to attach one yourself.</p>
-
-        <h2>6. Children</h2>
-        <p>ModBox has no accounts, no messaging and no user-generated content, and collects nothing from anyone, of any age.</p>
-
-        <h2>7. Changes to this policy</h2>
-        <p>If a future version of ModBox adds a feature that does send data — for example playing together over the network — this policy will be updated <strong>before</strong> that version is published, and the change will be described in the Store listing.</p>
-
-        <h2>8. Contact</h2>
-        <p>Questions about this policy: <a href="mailto:0@MThread.kz">0@MThread.kz</a></p>
+        <h2>4. Connection through the ModBox server</h2>
+        <p>When a direct connection fails and the host has ModBox PRO, game traffic travels through the same Firebase database. It is encrypted before it leaves the computer, so neither MThread nor Google can read it, and each part is deleted as soon as it is delivered, or after ten minutes if it is not.</p>
+        <h2>5. Microsoft account (optional)</h2>
+        <p>Everything works without signing in. If you sign in, ModBox receives an account identifier and display name from Windows. Your ModBox identifier, the name you show, your preferences and the codes of your groups are then kept in Firebase so they follow you to another computer, encrypted with a key derived from your account. ModBox never sees your password: sign-in happens in a Windows window. Signing out stops the sync.</p>
+        <h2>6. Your Minecraft server</h2>
+        <p>A server you run in ModBox runs on your computer. Players connect to it directly; the server itself sees their Minecraft names and IP addresses and writes them to its own log on your computer, as any Minecraft server does. MThread does not receive them.</p>
+        <h2>7. Telegram bot (optional)</h2>
+        <p>If you link the computer to the MThread Craft bot in Telegram, by typing the eight-digit code into the bot or scanning the QR code ModBox shows, ModBox signs in anonymously to the bot's Firebase database (Google, located in Belgium) and writes there:</p>
+        <ul>
+          <li>the computer's name, the ModBox version, its memory, processor load, free disk space and Windows version;</li>
+          <li>for each server ModBox keeps: its name, settings and state, the Minecraft names of the players on it and how many joined, the world's name, size and spawn point, and the public address players join at if your router opened a port;</li>
+          <li>the moments players join and leave and servers start, stop or crash, with the last lines of the server's log for a crash;</li>
+          <li>while a server is open in the bot: players' positions, dimension, heading and health, the server's load, its console lines, and pictures of the terrain around the players and the spawn point drawn from the world's files;</li>
+          <li>the results of commands sent from the bot (start, stop, a console line, a moderation action).</li>
+        </ul>
+        <p>Lines are cleaned before they leave: network addresses are replaced, any line mentioning a password, token, secret or API key is dropped, and players' chat never leaves. Only the Telegram account that linked the computer can see any of it. Unlinking, in ModBox or in the bot, deletes all of it. Telegram handles your conversation with the bot under its own privacy policy.</p>
+        <h2>8. Microsoft Store</h2>
+        <p>ModBox PRO is sold and billed by the Microsoft Store; ModBox never sees your payment details. It asks the Store whether a subscription is active and keeps the answer on your computer. At start, ModBox asks the Store whether a newer version is out and installs it through the Store; this can be turned off in Settings. Now and then ModBox offers to rate the app — the rating window is the Store's own.</p>
+        <h2>9. Crash reports and contacting us</h2>
+        <p>If Windows is set to send diagnostic data, Windows Error Reporting may send Microsoft a report when ModBox hangs or closes with an error. ModBox adds technical details: the build, the session number, the Windows version, the open screen, the last actions in the interface, how often the window stalled and what was running. No names, file paths or account data. MThread sees these reports in Partner Center without anything saying whose computer it was. "Report a problem" and reporting a mod open your own e-mail program; nothing is sent until you send it.</p>
+        <h2>10. How long data is kept</h2>
+        <ul>
+          <li>Play notices and server-transfer data: a few minutes.</li>
+          <li>Traffic through the ModBox server: until delivered, ten minutes at most.</li>
+          <li>A group document: while the group exists; your entry: while you are in it.</li>
+          <li>The account record: while you use sign-in.</li>
+          <li>The bot's data: while the computer is linked.</li>
+          <li>Everything on your computer: until you delete it or ModBox.</li>
+        </ul>
+        <h2>11. Your choices</h2>
+        <p>You can stay signed out, stay out of groups and not link the bot; everything else works. You can leave a group, sign out, unlink the bot, and turn off the update check and opening a port on the router at any time. For questions about your data write to <a href="mailto:0@MThread.kz">0@MThread.kz</a>; the records are encrypted with keys we do not have, so we cannot read them, but we will help remove what concerns you.</p>
+        <h2>12. Children</h2>
+        <p>ModBox has no chat and no public profiles; friends are added only by exchanging codes. Only the person who linked their computer sees it in the bot.</p>
+        <h2>13. Changes</h2>
+        <p>This policy is updated before a version of ModBox sends anything it does not describe. The date of the revision is at the top.</p>
       </div>
 
       <footer class="foot">
